@@ -29,7 +29,7 @@
 
 ```run_code
 
-python3 valid_code_release.py --config ./configs/video_inpainting.yaml
+python3 valid_code_release.py --config ./configs/code_release.yaml
 
 ```
 
