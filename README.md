@@ -20,6 +20,8 @@ This is the inference code for our paper CoCoCo
 
 [2]. *We will provide interactive UI to process videos.*
 
+[3]. *The inference code will be available in 24 hours.*
+
 #### Citation
 
 ---------------------------------------
