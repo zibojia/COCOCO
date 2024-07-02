@@ -23,6 +23,16 @@
 
 [2]. The video models are put in /path/to/Video_inpainting.
 
+### Prepare the mask
+
+**You can obtain mask by GroundingDINO+Track-Anything, or draw masks by yourselves.**
+
+```run_code
+
+python3 valid_code_release.py --config ./configs/video_inpainting.yaml
+
+```
+
 
 
 #### TO DO
