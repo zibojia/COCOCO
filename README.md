@@ -4,7 +4,7 @@
 
 <sup>1</sup>The Chinese University of Hong Kong    <sup>2</sup>The University of Hong Kong    <sup>3</sup>Tsinghua University    <sup>4</sup>International Digital Economy Academy
 
-* is corresponding author.
+\* is corresponding author.
 
 This is the inference code for our paper CoCoCo
 
