@@ -18,7 +18,7 @@ This is the inference code for our paper CoCoCo
 
 *We will provide interactive UI to process videos.*
 
-#### Cite
+#### Citation
 ---------------------------------------
 
 ```bibtex
