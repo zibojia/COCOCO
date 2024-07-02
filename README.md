@@ -20,7 +20,14 @@ This is the inference code for our paper CoCoCo
 ---------------------------------------
 
 '''
-xxx
+@article{Zi2024CoCoCo,
+  title={CoCoCo: Improving Text-Guided Video Inpainting for Better Consistency, Controllability and Compatibility},
+  author={Bojia Zi and Shihao Zhao and Xianbiao Qi and Jianan Wang and Yukai Shi and Qianyu Chen and Bin Liang and Kam-Fai Wong and Lei Zhang},
+  journal={ArXiv},
+  year={2024},
+  volume={abs/2403.12035},
+  url={https://arxiv.org/abs/2403.12035}
+}
 '''
 
 
