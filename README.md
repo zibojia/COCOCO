@@ -14,6 +14,8 @@ This is the inference code for our paper CoCoCo
 *We will use larger dataset with high-quality videos to produce a more powerful video inpainting model soon.*
 
 **Cite**
+---------------------------------------
+
 '''
 xxx
 '''
