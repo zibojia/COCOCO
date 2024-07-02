@@ -29,7 +29,7 @@
 
 ```run_code
 
-python3 valid_code_release.py --config ./configs/code_release.yaml --prompt "Trees. Snow Moutains. best quality. yellow flowers." --negative_prompt "worst quality. bad quality." --guidance_scale 10 --video_path ./images/
+python3 valid_code_release.py --config ./configs/code_release.yaml --prompt "Green Trees. Snow Moutains. best quality." --negative_prompt "worst quality. bad quality." --guidance_scale 10 --video_path ./images/
 
 ```
 
