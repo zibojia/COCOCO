@@ -25,7 +25,7 @@
 
 ### 2. Prepare the mask
 
-**You can obtain mask by GroundingDINO+Track-Anything, or draw masks by yourselves.**
+**You can obtain mask by GroundingDINO or Track-Anything, or draw masks by yourself.**
 
 
 ### 3. Run our validation script
