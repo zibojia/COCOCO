@@ -1,4 +1,9 @@
-# COCOCO
+# CoCoCo: Improving Text-Guided Video Inpainting for Better Consistency, Controllability and Compatibility
+
+**[Bojia Zi1](https://scholar.google.fi/citations?user=QrMKIkEAAAAJ&hl=en), [Shihao Zhao2](https://scholar.google.com/citations?user=dNQiLDQAAAAJ&hl=en), [Xianbiao Qi4], [Jianan Wang4], [Yukai Shi3], [Qianyu Chen1], [Bin Liang1], [Kam-Fai Wong1], [Lei Zhang4]**
+
+1 The Chinese University of Hong Kong   2 The University of Hong Kong   3 Tsinghua University   4 International Digital Economy Academy
+
 This is the inference code for our paper CoCoCo
 
 
