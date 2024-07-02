@@ -13,7 +13,7 @@
 
 ## Usage
 
-### Download pretrained models
+### 1. Download pretrained models
 
 **The pretrained image inpainting model is available [release](https://huggingface.co/runwayml/stable-diffusion-inpainting).**
 
@@ -23,10 +23,12 @@
 
 [2]. The video models are put in /path/to/Video_inpainting.
 
-### Prepare the mask
+### 2. Prepare the mask
 
 **You can obtain mask by GroundingDINO+Track-Anything, or draw masks by yourselves.**
 
+
+### 3. Run our validation script
 ```run_code
 
 python3 valid_code_release.py --config ./configs/code_release.yaml --prompt "Trees. Snow mountains. best quality." --negative_prompt "worst quality. bad quality." --guidance_scale 10 --video_path ./images/
