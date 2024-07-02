@@ -43,8 +43,6 @@ python3 valid_code_release.py --config ./configs/code_release.yaml --prompt "Tre
 
 [2]. *We will provide interactive UI to process videos.*
 
-[3]. *The inference code will be available in 24 hours.*
-
 #### Citation
 
 ---------------------------------------
