@@ -9,12 +9,17 @@
 ---------------------------------------
 This is the inference code for our paper CoCoCo
 
+## Usage
+
 ### Download pretrained models
+
 **The pretrained image inpainting model is available [release](https://huggingface.co/runwayml/stable-diffusion-inpainting).**
+
 **The pretrained video inpainting model is available [release](https://mycuhk-my.sharepoint.com/:f:/g/personal/1155203591_link_cuhk_edu_hk/EoXyViqDi8JEgBDCbxsyPY8BCg7YtkOy73SbBY-3WcQ72w?e=cDZuXM).**
 
-The image models are put in /path/to/StableDiffusion.
-The video models are put in /path/to/videos.
+[1]. The image models are put in /path/to/StableDiffusion.
+
+[2]. The video models are put in /path/to/videos.
 
 
 
