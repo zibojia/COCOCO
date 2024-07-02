@@ -6,8 +6,10 @@
 
 \* is corresponding author.
 
+*This is the inference code for our paper CoCoCo.*
+
 ---------------------------------------
-This is the inference code for our paper CoCoCo
+
 
 ## Usage
 
@@ -19,7 +21,7 @@ This is the inference code for our paper CoCoCo
 
 [1]. The image models are put in /path/to/StableDiffusion.
 
-[2]. The video models are put in /path/to/videos.
+[2]. The video models are put in /path/to/Video_inpainting.
 
 
 
