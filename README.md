@@ -14,9 +14,9 @@ This is the inference code for our paper CoCoCo
 
 #### TO DO
 ---------------------------------------
-*We will use larger dataset with high-quality videos to produce a more powerful video inpainting model soon.*
+[1]. *We will use larger dataset with high-quality videos to produce a more powerful video inpainting model soon.*
 
-*We will provide interactive UI to process videos.*
+[2]. *We will provide interactive UI to process videos.*
 
 #### Citation
 ---------------------------------------
