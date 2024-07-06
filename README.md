@@ -45,7 +45,7 @@ python3 valid_code_release.py --config ./configs/code_release.yaml --prompt "Tre
 
 [3]. *The code for LoRA will be given soon.*
 
-[4]. *The training code is being prepared.*
+[4]. *The training code is under preparation.*
 
 #### Citation
 
