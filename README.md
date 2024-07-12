@@ -46,7 +46,7 @@ mkdir [cococo_folder_name]; cd [cococo_folder_name]; wget [cococo_download_link]
 ### 3. Run our validation script.
 ```run_code
 
-python3 valid_code_release.py --config ./configs/code_release.yaml --prompt "Trees. Snow mountains. best quality." --negative_prompt "worst quality. bad quality." --guidance_scale 10 --video_path ./images/
+python3 valid_code_release.py --config ./configs/code_release.yaml --prompt "Trees. Snow mountains. best quality." --negative_prompt "worst quality. bad quality." --guidance_scale 10 --video_path ./images/ --model_path [cococo_folder_name] --pretrain_model_path [sd_folder_name] --sub_folder unet
 
 ```
 
