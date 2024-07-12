@@ -9,7 +9,10 @@
 *This is the inference code for our paper CoCoCo.*
 
 
-![COCOCO](https://github.com/zibojia/COCOCO/blob/main/__asset__/COCOCO.PNG)
+<div style="text-align: center;">
+  ![COCOCO](https://github.com/zibojia/COCOCO/blob/main/__asset__/COCOCO.PNG)
+</div>
+
 
 ---------------------------------------
 
