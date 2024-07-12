@@ -42,24 +42,27 @@ from cococo.utils.util import save_videos_grid, zero_rank_print
 
 def main(
     image_finetune: bool,
-    
+
     name: str,
     use_wandb: bool,
     launcher: str,
 
+    model_path: str,
+
     prompt: str,
     negative_prompt: str,
     guidance_scale: float,
-    
+
     output_dir: str,
     pretrained_model_path: str,
-    
+    sub_folder: str = "unet",
+
     unet_checkpoint_path: str = "",
     unet_additional_kwargs: Dict = {},
     noise_scheduler_kwargs = None,
-    
+
     num_workers: int = 32,
-    
+
     enable_xformers_memory_efficient_attention: bool = True,
 
     image_path: str = '',
@@ -70,7 +73,7 @@ def main(
 
     seed = global_seed
     torch.manual_seed(seed)
-    
+
     folder_name = name + datetime.datetime.now().strftime("-%Y-%m-%dT%H-%M-%S")
     output_dir = os.path.join(output_dir, folder_name)
 
@@ -87,12 +90,12 @@ def main(
     text_encoder   = CLIPTextModel.from_pretrained(pretrained_model_path, subfolder="text_encoder")
 
     unet = UNet3DConditionModel.from_pretrained_2d(
-            pretrained_model_path, subfolder="unet", 
+            pretrained_model_path, subfolder=sub_folder,
             unet_additional_kwargs=OmegaConf.to_container(unet_additional_kwargs)
         )
     state_dict = {}
     for i in range(4):
-        state_dict2 = torch.load(f'../model_{i}.pth', map_location='cpu')
+        state_dict2 = torch.load(f'{model_path}/model_{i}.pth', map_location='cpu')
         state_dict = {**state_dict, **state_dict2}
 
     state_dict2 = {}
@@ -190,6 +193,9 @@ if __name__ == "__main__":
     parser.add_argument("--config",   type=str, required=True)
     parser.add_argument("--prompt", type=str, default="")
     parser.add_argument("--negative_prompt", type=str, default="")
+    parser.add_argument("--model_path", type=str, default="../")
+    parser.add_argument("--pretrain_model_path", type=str, default="../")
+    parser.add_argument("--sub_folder", type=str, default="unet")
     parser.add_argument("--guidance_scale", type=float, default=20)
     parser.add_argument("--video_path", type=str, default="")
     args = parser.parse_args()
@@ -201,10 +207,12 @@ if __name__ == "__main__":
         launcher=None, \
         use_wandb=False, \
         prompt=args.prompt, \
+        model_path=args.model_path, \
+        sub_folder=args.sub_folder, \
+        pretrained_model_path=args.pretrain_model_path, \
         negative_prompt=args.negative_prompt, \
         guidance_scale=args.guidance_scale, \
         image_path=args.video_path+'/images.npy', \
         mask_path=args.video_path+'/masks.npy', \
         **config
         )
-
