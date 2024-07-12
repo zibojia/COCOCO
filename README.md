@@ -60,7 +60,7 @@ python3 valid_code_release.py --config ./configs/code_release.yaml --prompt "Tre
 
 [2]. *We will provide interactive UI to process videos.*
 
-[3]. *The code for LoRA will be given soon.*
+[3]. *The code for LoRA will be given in 24 hours.*
 
 [4]. *The training code is under preparation.*
 
