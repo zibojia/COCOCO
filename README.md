@@ -10,7 +10,7 @@
 
 
 <p align="center">
-  <img src="https://github.com/zibojia/COCOCO/blob/main/__asset__/COCOCO.PNG" alt="COCOCO" style="width: 80%;"/>
+  <img src="https://github.com/zibojia/COCOCO/blob/main/__asset__/COCOCO.PNG" alt="COCOCO" style="width: 60%;"/>
 </p>
 
 ---------------------------------------
@@ -18,7 +18,9 @@
 
 ## Usage
 
-### 1. Download pretrained models. Note that our method requires both parameters of sd1.5 inpainting and cococo.
+### 1. Download pretrained models. 
+
+**Note that our method requires both parameters of sd1.5 inpainting and cococo.**
 
 **The pretrained image inpainting model is [available](https://huggingface.co/runwayml/stable-diffusion-inpainting).**
 
