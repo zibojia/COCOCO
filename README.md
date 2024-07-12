@@ -8,20 +8,33 @@
 
 *This is the inference code for our paper CoCoCo.*
 
+
+![COCOCO](https://github.com/zibojia/COCOCO/blob/main/__asset__/COCOCO.PNG)
+
 ---------------------------------------
 
 
 ## Usage
 
-### 1. Download pretrained models
+### 1. Download pretrained models. Note that our method requires both parameters of sd1.5 inpainting and cococo.
 
 **The pretrained image inpainting model is [available](https://huggingface.co/runwayml/stable-diffusion-inpainting).**
 
 **The pretrained video inpainting model is [available](https://mycuhk-my.sharepoint.com/:f:/g/personal/1155203591_link_cuhk_edu_hk/EoXyViqDi8JEgBDCbxsyPY8BCg7YtkOy73SbBY-3WcQ72w?e=cDZuXM).**
 
-[1]. The image models are put in /path/to/StableDiffusion.
+[1]. The image models are put in [sd_folder_name]. 
 
-[2]. The video models are put in /path/to/Video_inpainting.
+For example, we can use the scripts to create a folder, and put the model to this folder.
+
+```
+mkdir [sd_folder_name]; cd [sd_folder_name]; wget [sd_download_link];
+```
+
+[2]. The video inpainting models are put in [cococo_folder_name].
+
+```
+mkdir [cococo_folder_name]; cd [cococo_folder_name]; wget [cococo_download_link];
+```
 
 ### 2. Prepare the mask
 
