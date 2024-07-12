@@ -56,6 +56,8 @@ python3 valid_code_release.py --config ./configs/code_release.yaml --prompt "Tre
 
 Our idea is based on the [task vector](https://arxiv.org/abs/2212.04089).
 
+Surprisingly, we found that inpainting model is compatiable with T2I model, even the first convlutional channel is mimatch. 
+
 <p align="center">
   <img src="https://github.com/zibojia/COCOCO/blob/main/__asset__/task.PNG" alt="COCOCO" style="width: 60%;"/>
 </p>
