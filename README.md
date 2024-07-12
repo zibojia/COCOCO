@@ -42,7 +42,7 @@ mkdir [cococo_folder_name]; cd [cococo_folder_name]; wget [cococo_download_link]
 
 ### 2. Prepare the mask
 
-**You can obtain mask by GroundingDINO or Track-Anything, or draw masks by yourself.**
+**You can obtain mask by [GroundingDINO](https://github.com/IDEA-Research/GroundingDINO) or [Track-Anything](https://github.com/gaomingqi/Track-Anything), or draw masks by yourself.**
 
 
 ### 3. Run our validation script.
@@ -51,6 +51,15 @@ mkdir [cococo_folder_name]; cd [cococo_folder_name]; wget [cococo_download_link]
 python3 valid_code_release.py --config ./configs/code_release.yaml --prompt "Trees. Snow mountains. best quality." --negative_prompt "worst quality. bad quality." --guidance_scale 10 --video_path ./images/ --model_path [cococo_folder_name] --pretrain_model_path [sd_folder_name] --sub_folder unet
 
 ```
+
+### Using our Inpainting model with T2Is
+
+Our idea is based on the [task vector](https://arxiv.org/abs/2212.04089).
+
+<p align="center">
+  <img src="https://github.com/zibojia/COCOCO/blob/main/__asset__/task.PNG" alt="COCOCO" style="width: 60%;"/>
+</p>
+
 
 #### TO DO
 
