@@ -52,7 +52,7 @@ python3 valid_code_release.py --config ./configs/code_release.yaml --prompt "Tre
 
 ```
 
-### Using our Inpainting model with T2Is
+### 4. Using our Inpainting model with T2Is
 
 Our idea is based on the [task vector](https://arxiv.org/abs/2212.04089).
 
