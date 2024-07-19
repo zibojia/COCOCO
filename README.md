@@ -96,7 +96,7 @@ lora_unet_up_blocks_3_resnets_0_conv2.lora_up.weight
 ```
 
 ```
-python3 convert_lora.py --tensor_path [tensor_path] --unet_path [unet_path] --text_encoder_path [text_encoder_path] --vae_path [vae_path] --regulation_path ./test.json --target_prefix [target_prefix]
+python3 convert_lora.py --tensor_path [tensor_path] --unet_path [unet_path] --text_encoder_path [text_encoder_path] --vae_path [vae_path] --regulation_path ./changement.json --target_prefix [target_prefix]
 ```
 
 #### TO DO
