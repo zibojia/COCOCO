@@ -81,7 +81,7 @@ Therefore, we develope a tool to convert this type model to the delta of weight.
 
 ```
 cd task_vector;
-python3 convert.py --tensor_path [safetensor_path] --unet_path [unet_path] --text_encoder_path [text_encoder_path] --vae_path [vae_path] --source_path [source_path] --target_path [target_path] --target_prefix [prefix];
+python3 convert.py --tensor_path [safetensor_path] --unet_path [unet_path] --text_encoder_path [text_encoder_path] --vae_path [vae_path] --source_path ./resources --target_path ./resources --target_prefix [prefix];
 ```
 
 
