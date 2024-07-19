@@ -107,9 +107,7 @@ python3 convert_lora.py --tensor_path [tensor_path] --unet_path [unet_path] --te
 
 [2]. *We will provide interactive UI to process videos.*
 
-[3]. *The code for LoRA will be given in 24 hours.*
-
-[4]. *The training code is under preparation.*
+[3]. *The training code is under preparation.*
 
 #### Citation
 
