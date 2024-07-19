@@ -84,9 +84,9 @@ cd task_vector;
 python3 convert.py --tensor_path [safetensor_path] --unet_path [unet_path] --text_encoder_path [text_encoder_path] --vae_path [vae_path] --source_path ./resources --target_path ./resources --target_prefix [prefix];
 ```
 
-**For the model using same key and trained by LoRA.**
+**2. For the model using same key and trained by LoRA.**
 
-For example, the Ghibli LoRA.
+For example, the [Ghibli](https://civitai.com/models/54233/ghiblibackground) LoRA.
 
 ```
 python3 convert_lora.py --tensor_path [tensor_path] --unet_path [unet_path] --text_encoder_path [text_encoder_path] --vae_path [vae_path] --regulation_path ./test.json --target_prefix [target_prefix]
