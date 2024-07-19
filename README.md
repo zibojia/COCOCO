@@ -64,7 +64,7 @@ Surprisingly, we found that inpainting model is compatiable with T2I model, even
 
 
 
-**For the model using different key**
+**1. For the model using different key**
 
 For example, the epiCRealism.
 
