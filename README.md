@@ -66,7 +66,7 @@ Surprisingly, we found that inpainting model is compatiable with T2I model, even
 
 **1. For the model using different key, we use the following script to process opensource T2I model.**
 
-For example, the [epiCRealism](https://civitai.com/models/25694?modelVersionId=134065).
+For example, the [epiCRealism](https://civitai.com/models/25694?modelVersionId=134065), it is different from the key of the StableDiffusion.
 
 ```
 model.diffusion_model.input_blocks.1.1.norm.bias
@@ -77,7 +77,7 @@ model.diffusion_model.input_blocks.1.1.proj_out.bias
 model.diffusion_model.input_blocks.1.1.proj_out.weight
 ```
 
-We develope a tool to convert this type model to the delta of weight.
+Therefore, we develope a tool to convert this type model to the delta of weight.
 
 ```
 cd task_vector;
