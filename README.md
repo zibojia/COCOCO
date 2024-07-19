@@ -64,9 +64,9 @@ Surprisingly, we found that inpainting model is compatiable with T2I model, even
 
 
 
-**1. For the model using different key**
+**1. For the model using different key, we use the following script to process opensource T2I model.**
 
-For example, the epiCRealism.
+For example, the [epiCRealism](https://civitai.com/models/25694?modelVersionId=134065).
 
 ```
 model.diffusion_model.input_blocks.1.1.norm.bias
