@@ -33,6 +33,7 @@ for item in json_list:
 
 state_dict2 = {}
 for key in tensor_dict:
+    print(key)
     org_key = key
     for it in json_list:
         reg = it["regression"]
@@ -73,5 +74,21 @@ for key in tensor_dict:
         print('### The key doesn\'t match!')
         exit(0)
 
-target_prefix = args.target_prefix
-torch.save(state_dict2, f'./{target_prefix}_delta.pth')
+text_state_dict = {}
+vae_state_dict = {}
+unet_state_dict = {}
+for key in state_dict2:
+    if 'text' in key:
+        text_state_dict[key] = state_dict2[key]
+    elif key.startswith('encoder.') or key.startswith('decoder.'):
+        vae_state_dict[key] = state_dict2[key]
+    else:
+        unet_state_dict[key] = state_dict2[key]
+
+if len(text_state_dict) > 0:
+    torch.save(text_state_dict, f'./text_{args.target_prefix}_delta.pth')
+if len(vae_state_dict) > 0:
+    torch.save(vae_state_dict, f'./vae_{args.target_prefix}_delta.pth')
+if len(unet_state_dict):
+    torch.save(unet_state_dict, f'./unet_{args.target_prefix}_delta.pth')
+    
