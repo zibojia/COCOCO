@@ -13,7 +13,7 @@
   <img src="https://github.com/zibojia/COCOCO/blob/main/__asset__/COCOCO.PNG" alt="COCOCO" style="width: 60%;"/>
 </p>
 
-![Demo](__asset__/demo.gif)
+![Demo](__asset__/play-in-background.gif)
 ---------------------------------------
 
 
