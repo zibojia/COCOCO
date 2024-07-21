@@ -95,6 +95,8 @@ lora_unet_up_blocks_3_resnets_0_conv2.lora_down.weight
 lora_unet_up_blocks_3_resnets_0_conv2.lora_up.weight
 ```
 
+**3. You can use customized T2I or LoRA to create vision content in the masks.**
+
 ```
 python3 convert_lora.py --tensor_path [tensor_path] --unet_path [unet_path] --text_encoder_path [text_encoder_path] --vae_path [vae_path] --regulation_path ./lora.json --target_prefix [target_prefix]
 ```
