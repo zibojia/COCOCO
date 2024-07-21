@@ -1,7 +1,6 @@
 image_finetune: false
 
 output_dir: "../COCOCO/outputs"
-pretrained_model_path: "../StableDiffusion" 
 
 unet_additional_kwargs:
   use_inflated_groupnorm:         true
