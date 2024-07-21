@@ -41,8 +41,6 @@ from cococo.pipelines.pipeline_animation_inpainting_cross_attention_vae import A
 from cococo.utils.util import save_videos_grid, zero_rank_print
 
 def main(
-    image_finetune: bool,
-
     name: str,
     use_wandb: bool,
     launcher: str,
