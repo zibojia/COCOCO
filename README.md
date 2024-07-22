@@ -13,10 +13,10 @@
   <img src="https://github.com/zibojia/COCOCO/blob/main/__asset__/COCOCO.PNG" alt="COCOCO" style="width: 60%;"/>
 </p>
 
-<div style="display: flex;">
-    <img src="__asset__/sea_org.gif" style="width: 32%;" />
-    <img src="__asset__/sea1.gif" style="width: 32%;" />
-    <img src="__asset__/sea2.gif" style="width: 32%;" />
+<div style="display: flex; justify-content: space-between;">
+    <img src="__asset__/sea_org.gif" style="width: 30%;" />
+    <img src="__asset__/sea1.gif" style="width: 30%;" />
+    <img src="__asset__/sea2.gif" style="width: 30%;" />
 </div>
 
 ---------------------------------------
