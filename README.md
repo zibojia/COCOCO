@@ -13,11 +13,6 @@
   <img src="https://github.com/zibojia/COCOCO/blob/main/__asset__/COCOCO.PNG" alt="COCOCO" style="width: 60%;"/>
 </p>
 
-<div style="display: flex;">
-    <img src="" style="height: 30%;" />
-      <img src="" style="height: 30%;" />
-    <img src="" style="height: 30%;" />
-</div>
 
 
 <table class="center">
