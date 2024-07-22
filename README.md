@@ -13,7 +13,6 @@
   <img src="https://github.com/zibojia/COCOCO/blob/main/__asset__/COCOCO.PNG" alt="COCOCO" style="width: 60%;"/>
 </p>
 
-
 <table>
     <tr>
     <td><img src="__asset__/sea_org.gif"></td>
@@ -27,6 +26,14 @@
     <td><img src="__asset__/river_org.gif"></td>
     <td><img src="__asset__/river1.gif"></td>
     <td><img src="__asset__/river2.gif"></td>
+    </tr>
+</table>
+
+<table>
+    <tr>
+    <td><img src="__asset__/sky_org.gif"></td>
+    <td><img src="__asset__/sky1.gif"></td>
+    <td><img src="__asset__/sky2.gif"></td>
     </tr>
 </table>
 
