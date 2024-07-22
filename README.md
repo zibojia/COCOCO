@@ -24,6 +24,15 @@
     </tr>
 </table>
 
+
+<table>
+    <tr>
+    <td><img src="https://github.com/guoyww/AnimateDiff/__assets__/animations/model_03/01.gif"></td>
+    <td><img src="https://github.com/guoyww/AnimateDiff/__assets__/animations/model_03/02.gif"></td>
+    <td><img src="https://github.com/guoyww/AnimateDiff/__assets__/animations/model_03/03.gif"></td>
+    <td><img src="https://github.com/guoyww/AnimateDiff/__assets__/animations/model_03/04.gif"></td>
+    </tr>
+</table>
 ---------------------------------------
 
 
