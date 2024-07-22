@@ -13,7 +13,7 @@
   <img src="https://github.com/zibojia/COCOCO/blob/main/__asset__/COCOCO.PNG" alt="COCOCO" style="width: 60%;"/>
 </p>
 
-<div style="display: flex; justify-content: space-between;">
+<div style="display: flex;">
     <img src="__asset__/sea_org.gif" style="height: 30%;" />
       <img src="__asset__/sea1.gif" style="height: 30%;" />
     <img src="__asset__/sea2.gif" style="height: 30%;" />
