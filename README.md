@@ -13,7 +13,8 @@
   <img src="https://github.com/zibojia/COCOCO/blob/main/__asset__/COCOCO.PNG" alt="COCOCO" style="width: 60%;"/>
 </p>
 
-![Demo](__asset__/sea-org.gif) ![Demo](__asset__/sea1.gif) ![Demo](__asset__/sea2.gif)
+![sea_org](__asset__/sea_org.gif) ![sea1](__asset__/sea1.gif) ![sea2](__asset__/sea2.gif)
+
 ---------------------------------------
 
 
