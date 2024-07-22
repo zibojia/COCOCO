@@ -76,6 +76,15 @@ python3 valid_code_release.py --config ./configs/code_release.yaml --prompt "Tre
 
 ### 4. Using our Inpainting model with T2Is (Optional)
 
+
+<table>
+    <tr>
+    <td><img src="__asset__/unmbrella_org.gif"></td>
+    <td><img src="__asset__/unmbrella1.gif"></td>
+    <td><img src="__asset__/unmbrella2.gif"></td>
+    </tr>
+</table>
+
 <table>
     <tr>
     <td><img src="__asset__/gibuli.gif"></td>
