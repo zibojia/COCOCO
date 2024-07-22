@@ -62,6 +62,14 @@ python3 valid_code_release.py --config ./configs/code_release.yaml --prompt "Tre
 
 ### 4. Using our Inpainting model with T2Is (Optional)
 
+<table>
+    <tr>
+    <td><img src="__asset__/gibuli.gif"></td>
+    <td><img src="__asset__/bocchi1.gif"></td>
+    <td><img src="__asset__/bocchi2.gif"></td>
+    </tr>
+</table>
+
 Our idea is based on the [task vector](https://arxiv.org/abs/2212.04089).
 
 Surprisingly, we found that inpainting model is compatiable with T2I model, even the first convlutional channel is mimatched. 
