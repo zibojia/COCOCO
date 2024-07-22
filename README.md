@@ -13,7 +13,11 @@
   <img src="https://github.com/zibojia/COCOCO/blob/main/__asset__/COCOCO.PNG" alt="COCOCO" style="width: 60%;"/>
 </p>
 
-![sea_org](__asset__/sea_org.gif) ![sea1](__asset__/sea1.gif) ![sea2](__asset__/sea2.gif)
+<div style="display: flex;">
+    <img src="__asset__/sea_org.gif" style="width: 33.33%;" />
+    <img src="__asset__/sea1.gif" style="width: 33.33%;" />
+    <img src="__asset__/sea2.gif" style="width: 33.33%;" />
+</div>
 
 ---------------------------------------
 
