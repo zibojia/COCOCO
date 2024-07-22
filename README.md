@@ -14,10 +14,19 @@
 </p>
 
 <div style="display: flex;">
-    <img src="__asset__/sea_org.gif" style="height: 30%;" />
-      <img src="__asset__/sea1.gif" style="height: 30%;" />
-    <img src="__asset__/sea2.gif" style="height: 30%;" />
+    <img src="" style="height: 30%;" />
+      <img src="" style="height: 30%;" />
+    <img src="" style="height: 30%;" />
 </div>
+
+
+<table class="center">
+    <tr>
+    <td><img src="__asset__/sea_org.gif"></td>
+    <td><img src="__asset__/sea1.gif"></td>
+    <td><img src="__asset__/sea2.gif"></td>
+    </tr>
+</table>
 
 ---------------------------------------
 
