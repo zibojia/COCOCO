@@ -14,8 +14,6 @@
 </p>
 
 
-------------------------
-
 <table>
     <tr>
     <td><img src="__asset__/sea_org.gif"></td>
@@ -24,7 +22,8 @@
     <td><img src="__asset__/sea2.gif"></td>
     </tr>
 </table>
----------------------------------------
+<p style="margin-left: 2em; margin-top: -1em">Model：<a href="https://civitai.com/models/30240/toonyou">ToonYou</a></p>
+
 
 
 ## Usage
