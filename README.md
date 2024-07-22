@@ -14,7 +14,7 @@
 </p>
 
 <div style="display: flex; justify-content: space-between;">
-    <img src="__asset__/sea_org.gif" style="width: 30%;" />
+    <img src="__asset__/sea_org.gif" style="height: 30%;" />
 </div>
 
 ---------------------------------------
