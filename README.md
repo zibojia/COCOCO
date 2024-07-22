@@ -78,11 +78,15 @@ python3 valid_code_release.py --config ./configs/code_release.yaml --prompt "Tre
 
 <table>
     <tr>
-    <td><img src="__asset__/sky_org.gif"></td>
-    <td><img src="__asset__/sky1.gif"></td>
-    <td><img src="__asset__/sky2.gif"></td>
+    <td><img src="__asset__/gibuli_lora_org.gif"></td>
+    <td><img src="__asset__/gibuli_merged1.gif"></td>
+    <td><img src="__asset__/gibuli_merged2.gif"></td>
     </tr>
 </table>
+
+
+
+
 
 <table>
     <tr>
