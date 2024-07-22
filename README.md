@@ -14,9 +14,9 @@
 </p>
 
 <div style="display: flex;">
-    <img src="__asset__/sea_org.gif" style="width: 33.2%;" />
-    <img src="__asset__/sea1.gif" style="width: 33.2%;" />
-    <img src="__asset__/sea2.gif" style="width: 33.2%;" />
+    <img src="__asset__/sea_org.gif" style="width: 32%;" />
+    <img src="__asset__/sea1.gif" style="width: 32%;" />
+    <img src="__asset__/sea2.gif" style="width: 32%;" />
 </div>
 
 ---------------------------------------
