@@ -22,6 +22,13 @@
     </tr>
 </table>
 
+<table>
+    <tr>
+    <td><img src="__asset__/rover_org.gif"></td>
+    <td><img src="__asset__/river1.gif"></td>
+    <td><img src="__asset__/river2.gif"></td>
+    </tr>
+</table>
 
 
 ## Usage
