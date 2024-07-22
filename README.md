@@ -14,8 +14,9 @@
 </p>
 
 
+------------------------
 
-<table class="center">
+<table>
     <tr>
     <td><img src="__asset__/sea_org.gif"></td>
     <td><img src="__asset__/sea1.gif"></td>
