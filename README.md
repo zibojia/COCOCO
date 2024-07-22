@@ -1,4 +1,4 @@
-# CoCoCo: Improving Text-Guided Video Inpainting for Better Consistency, Controllability and Compatibility
+# [CoCoCo: Improving Text-Guided Video Inpainting for Better Consistency, Controllability and Compatibility](https://arxiv.org/abs/2403.12035)
 
 **[Bojia Zi<sup>1</sup>](https://scholar.google.fi/citations?user=QrMKIkEAAAAJ&hl=en), [Shihao Zhao<sup>2</sup>](https://scholar.google.com/citations?user=dNQiLDQAAAAJ&hl=en), [Xianbiao Qi<sup>*4</sup>](https://scholar.google.com/citations?user=odjSydQAAAAJ&hl=en), [Jianan Wang<sup>4</sup>](https://scholar.google.com/citations?user=mt5mvZ8AAAAJ&hl=en), [Yukai Shi<sup>3</sup>](https://scholar.google.com/citations?user=oQXfkSQAAAAJ&hl=en), [Qianyu Chen<sup>1</sup>](https://scholar.google.com/citations?user=Kh8FoLQAAAAJ&hl=en), [Bin Liang<sup>1</sup>](https://scholar.google.com/citations?user=djpQeLEAAAAJ&hl=en), [Kam-Fai Wong<sup>1</sup>](https://scholar.google.com/citations?user=fyMni2cAAAAJ&hl=en), [Lei Zhang<sup>4</sup>](https://scholar.google.com/citations?user=fIlGZToAAAAJ&hl=en)**
 
@@ -21,16 +21,7 @@
     <td><img src="__asset__/sea_org.gif"></td>
     <td><img src="__asset__/sea1.gif"></td>
     <td><img src="__asset__/sea2.gif"></td>
-    </tr>
-</table>
-
-
-<table>
-    <tr>
-    <td><img src="https://github.com/guoyww/AnimateDiff/__assets__/animations/model_03/01.gif"></td>
-    <td><img src="https://github.com/guoyww/AnimateDiff/__assets__/animations/model_03/02.gif"></td>
-    <td><img src="https://github.com/guoyww/AnimateDiff/__assets__/animations/model_03/03.gif"></td>
-    <td><img src="https://github.com/guoyww/AnimateDiff/__assets__/animations/model_03/04.gif"></td>
+    <td><img src="__asset__/sea2.gif"></td>
     </tr>
 </table>
 ---------------------------------------
