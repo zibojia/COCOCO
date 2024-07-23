@@ -35,6 +35,11 @@
     <td><img src="__asset__/river1.gif"></td>
     <td><img src="__asset__/river2.gif"></td>
     </tr>
+    <tr>
+    <td> Orginal </td>
+    <td> The river with ice ...  </td>
+    <td> The river with ice ...  </td>
+    </tr>
 </table>
 
 <table>
