@@ -48,6 +48,11 @@
     <td><img src="__asset__/sky1.gif"></td>
     <td><img src="__asset__/sky2.gif"></td>
     </tr>
+    <tr>
+    <td> Orginal </td>
+    <td> Meteor streaking in the sky ...  </td>
+    <td> Meteor streaking in the sky ...  </td>
+    </tr>
 </table>
 
 
