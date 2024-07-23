@@ -21,6 +21,12 @@
     <td><img src="__asset__/sea1.gif"></td>
     <td><img src="__asset__/sea2.gif"></td>
     </tr>
+    <tr>
+    <td> Orginal </td>
+    <td> The ocean, the waves ...  </td>
+    <td> The ocean, the waves ...  </td>
+    </tr>
+    
 </table>
 
 <table>
