@@ -198,4 +198,7 @@ python3 valid_code_release_with_T2I_LoRA.py --config ./configs/code_release.yaml
 }
 ```
 
+#### Acknowledgement
+This code is based on [AnimateDiff](https://github.com/guoyww/AnimateDiff)
+
 
