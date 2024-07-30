@@ -176,12 +176,16 @@ python3 valid_code_release_with_T2I_LoRA.py --config ./configs/code_release.yaml
 ### TO DO
 
 ---------------------------------------
+[1]. We will use SAM2 to produce a new inpainting demo.
+
 
 [1]. *We will use larger dataset with high-quality videos to produce a more powerful video inpainting model soon.*
 
 [2]. *We will provide interactive UI to process videos.*
 
 [3]. *The training code is under preparation.*
+
+
 
 ### Citation
 
