@@ -173,17 +173,25 @@ python3 convert_lora.py --tensor_path [tensor_path] --unet_path [unet_path] --te
 python3 valid_code_release_with_T2I_LoRA.py --config ./configs/code_release.yaml --guidance_scale 10 --video_path [video_path] --masks_path [masks_path] --model_path [model_path] --pretrain_model_path [pretrain_model_path] --sub_folder [sub_folder] --unet_lora_path [unet_lora_path] --beta_unet 0.75 --text_lora_path [text_lora_path] --beta_text 0.75 --unet_model_path [unet_model_path] --text_model_path [text_model_path] --vae_model_path [vae_model_path] --prompt [prompt] --negative_prompt [negative_prompt]
 ```
 
+### COCOCO INFERENCE with SAM2
+
+<p align="center">
+  <img src="https://github.com/zibojia/COCOCO/blob/main/__asset__/gradio.PNG" alt="gradio" style="width: 60%;"/>
+</p>
+
+```
+CUDA_VISIBLE_DEVICES=0,1 python3 app.py
+```
+
+
 ### TO DO
 
 ---------------------------------------
-[1]. We will use SAM2 to produce a new inpainting demo.
-
 
 [1]. *We will use larger dataset with high-quality videos to produce a more powerful video inpainting model soon.*
 
-[2]. *We will provide interactive UI to process videos.*
 
-[3]. *The training code is under preparation.*
+[2]. *The training code is under preparation.*
 
 
 
