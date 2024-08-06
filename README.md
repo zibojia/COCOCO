@@ -176,7 +176,7 @@ python3 valid_code_release_with_T2I_LoRA.py --config ./configs/code_release.yaml
 ### COCOCO INFERENCE with SAM2
 
 <p align="center">
-  <img src="https://github.com/zibojia/COCOCO/blob/main/__asset__/gradio.PNG" alt="gradio" style="width: 60%;"/>
+  <img src="https://github.com/zibojia/COCOCO/blob/main/__asset__/DEMO.PNG" alt="DEMO" style="width: 60%;"/>
 </p>
 
 ```
