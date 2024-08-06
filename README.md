@@ -173,10 +173,10 @@ python3 convert_lora.py --tensor_path [tensor_path] --unet_path [unet_path] --te
 python3 valid_code_release_with_T2I_LoRA.py --config ./configs/code_release.yaml --guidance_scale 10 --video_path [video_path] --masks_path [masks_path] --model_path [model_path] --pretrain_model_path [pretrain_model_path] --sub_folder [sub_folder] --unet_lora_path [unet_lora_path] --beta_unet 0.75 --text_lora_path [text_lora_path] --beta_text 0.75 --unet_model_path [unet_model_path] --text_model_path [text_model_path] --vae_model_path [vae_model_path] --prompt [prompt] --negative_prompt [negative_prompt]
 ```
 
-### COCOCO INFERENCE with SAM2
+### 5. COCOCO INFERENCE with SAM2
 
 <p align="center">
-  <img src="https://github.com/zibojia/COCOCO/blob/main/__asset__/DEMO.PNG" alt="DEMO" style="width: 60%;"/>
+  <img src="https://github.com/zibojia/COCOCO/blob/main/__asset__/DEMO.PNG" alt="DEMO" style="width: 80%;"/>
 </p>
 
 ```
