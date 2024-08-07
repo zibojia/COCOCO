@@ -82,7 +82,7 @@ mkdir [cococo_folder_name]; cd [cococo_folder_name]; wget [cococo_download_link]
 
 ### 2. Prepare the mask
 
-**You can obtain mask by [GroundingDINO](https://github.com/IDEA-Research/GroundingDINO) or [Track-Anything](https://github.com/gaomingqi/Track-Anything), or draw masks by yourself.**
+**You can obtain mask by [GroundingDINO](https://github.com/IDEA-Research/GroundingDINO) or [Track-Anything](https://github.com/gaomingqi/Track-Anything) or our [Demo Code](https://github.com/zibojia/COCOCO?tab=readme-ov-file#5-cococo-inference-with-sam2), or draw masks by yourself.**
 
 
 ### 3. Run our validation script.
