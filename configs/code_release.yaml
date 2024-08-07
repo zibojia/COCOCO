@@ -1,7 +1,3 @@
-image_finetune: false
-
-output_dir: "../COCOCO/outputs"
-
 unet_additional_kwargs:
   use_inflated_groupnorm:         true
   unet_use_cross_frame_attention: false
@@ -17,7 +13,7 @@ unet_additional_kwargs:
     num_transformer_block:              1
     attention_block_types:              [ "Temporal_Self", "Temporal_Self", "Temporal_Light_down_resize", "Temporal_Text_Cross" ]
     temporal_position_encoding:         true
-    temporal_position_encoding_max_len: 32
+    temporal_position_encoding_max_len: 64
     temporal_attention_dim_div:         1
     text_cross_attention_dim:           768
     vision_cross_attention_dim:         768
@@ -29,11 +25,3 @@ noise_scheduler_kwargs:
   beta_schedule:       "linear"
   steps_offset:        1
   clip_sample:         false
-
-
-unet_checkpoint_path: ""
-
-global_seed: 42
-enable_xformers_memory_efficient_attention: True
-
-is_debug: False
