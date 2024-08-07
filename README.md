@@ -211,6 +211,6 @@ CUDA_VISIBLE_DEVICES=0,1 python3 app.py
 ```
 
 ### Acknowledgement
-This code is based on [AnimateDiff](https://github.com/guoyww/AnimateDiff)
+This code is based on [AnimateDiff](https://github.com/guoyww/AnimateDiff), [Segment-Anything-2](https://github.com/facebookresearch/segment-anything-2) and [propainter](https://github.com/sczhou/ProPainter).
 
 
