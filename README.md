@@ -58,6 +58,13 @@
 
 ## Usage
 
+### Installation
+
+```
+pip3 install -r requirements.txt
+pip3 install -e .
+```
+
 ### 1. Download pretrained models. 
 
 **Note that our method requires both parameters of sd1.5 inpainting and cococo.**
