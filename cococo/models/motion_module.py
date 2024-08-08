@@ -58,7 +58,7 @@ class VanillaTemporalModule(nn.Module):
         vision_cross_attention_dim         = None,
         cross_frame_attention_mode         = None,
         temporal_position_encoding         = False,
-        temporal_position_encoding_max_len = 24,
+        temporal_position_encoding_max_len = 64,
         temporal_attention_dim_div         = 1,
         zero_initialize                    = True,
         layer_id                           = 100,
@@ -109,7 +109,7 @@ class TemporalTransformer3DModel(nn.Module):
         
         cross_frame_attention_mode         = None,
         temporal_position_encoding         = False,
-        temporal_position_encoding_max_len = 24,
+        temporal_position_encoding_max_len = 64,
     ):
         super().__init__()
 
@@ -188,7 +188,7 @@ class TemporalTransformerBlock(nn.Module):
         upcast_attention                   = False,
         cross_frame_attention_mode         = None,
         temporal_position_encoding         = False,
-        temporal_position_encoding_max_len = 24,
+        temporal_position_encoding_max_len = 64,
         layer_id = 100
     ):
         super().__init__()
@@ -284,7 +284,7 @@ class PositionalEncoding(nn.Module):
         self, 
         d_model, 
         dropout = 0., 
-        max_len = 24
+        max_len = 64
     ):
         #print('pe d_model', d_model, 'max_len', max_len, 4*d_model*max_len/(1024*1024), 'M')
         super().__init__()
@@ -307,7 +307,7 @@ class VersatileAttention(CrossAttention):
             attention_mode                     = None,
             cross_frame_attention_mode         = None,
             temporal_position_encoding         = False,
-            temporal_position_encoding_max_len = 24,            
+            temporal_position_encoding_max_len = 64,            
             *args, **kwargs
         ):
         super().__init__(*args, **kwargs)
@@ -392,7 +392,7 @@ class VersatileSelfAttention(CrossAttention):
             attention_mode                     = None,
             cross_frame_attention_mode         = None,
             temporal_position_encoding         = False,
-            temporal_position_encoding_max_len = 24,            
+            temporal_position_encoding_max_len = 64,            
             *args, **kwargs
         ):
 
@@ -470,7 +470,7 @@ class VersatileCrossAttention(CrossAttention):
             text_cross_attention_dim           = None,
             vision_cross_attention_dim         = None, 
             temporal_position_encoding         = False,
-            temporal_position_encoding_max_len = 24,            
+            temporal_position_encoding_max_len = 64,            
             *args, **kwargs
         ):
 
@@ -574,7 +574,7 @@ class LightAttention(CrossAttention):
             attention_mode                     = None,
             cross_frame_attention_mode         = None,
             temporal_position_encoding         = False,
-            temporal_position_encoding_max_len = 24,
+            temporal_position_encoding_max_len = 64,
             down_sampling='False',
             down_resize='False',
             down_resize_conv='False',
@@ -594,7 +594,7 @@ class LightAttention(CrossAttention):
         self.pos_encoder = PositionalEncoding(
             kwargs["query_dim"],
             dropout=0., 
-            max_len=4800
+            max_len=10000
         )
 
         kwargs['down_sampling'] = down_sampling

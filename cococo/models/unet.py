@@ -333,6 +333,7 @@ class UNet3DConditionModel(ModelMixin, ConfigMixin):
         mid_block_additional_residual: Optional[torch.Tensor] = None,
 
         return_dict: bool = True,
+        device = "cuda:0"
     ) -> Union[UNet3DConditionOutput, Tuple]:
         r"""
         Args:
@@ -369,8 +370,8 @@ class UNet3DConditionModel(ModelMixin, ConfigMixin):
         # center input if necessary
         if self.config.center_input_sample:
             sample = 2 * sample - 1.0
-        
-        latent_model_input = torch.cat([latents,mask,sample],dim=1)
+
+        latent_model_input = torch.cat([latents.to(device),mask.to(device),sample.to(device)],dim=1)
 
         # time
         timesteps = timestep
@@ -394,7 +395,7 @@ class UNet3DConditionModel(ModelMixin, ConfigMixin):
         # but time_embedding might actually be running in fp16. so we need to cast here.
         # there might be better ways to encapsulate this.
         t_emb = t_emb.to(dtype=self.dtype)
-        emb = self.time_embedding(t_emb)
+        emb = self.time_embedding(t_emb.to(device))
 
         if self.class_embedding is not None:
             if class_labels is None:
