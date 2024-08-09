@@ -192,6 +192,7 @@ CUDA_VISIBLE_DEVICES=0,1 python3 app.py --config ./configs/code_release.yaml --m
 ```
 
 **Try our demo with LoRA and checkpoint**
+The checkpoint is [available](https://mycuhk-my.sharepoint.com/:f:/g/personal/1155203591_link_cuhk_edu_hk/EpuCr0azYKxJg7QJ71Mln9UBYDLzoFm6GQWYN9UwCauhYg?e=rwPAhY)
 ```
 CUDA_VISIBLE_DEVICES=0,1 python3 app_with_T2I_LoRA.py --config ./configs/code_release.yaml --text_lora_path [text_lora_path] --unet_lora_path [unet_lora_path] --beta_text [beta_text] --beta_vae [beta_vae] --beta_unet [beta_unet] --text_model_path [text_model_path] --unet_model_path [unet_model_path] --vae_model_path [vae_model_path]  --model_path [model_path] --pretrain_model_path [pretrain_model_path] --sub_folder [sub_folder]
 ```
