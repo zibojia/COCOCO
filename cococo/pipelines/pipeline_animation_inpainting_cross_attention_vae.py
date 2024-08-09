@@ -338,6 +338,7 @@ class AnimationInpaintPipeline(DiffusionPipeline):
         callback_steps: Optional[int] = 1,
         use_mask: Optional[bool] = False,
         use_flash_attention: Optional[bool] = False,
+        unet_device = "cuda:0",
         **kwargs,
     ):
         # Default height and width to unet
@@ -366,10 +367,9 @@ class AnimationInpaintPipeline(DiffusionPipeline):
         if negative_prompt is not None:
             negative_prompt = negative_prompt if isinstance(negative_prompt, list) else [negative_prompt] * batch_size 
         text_embeddings = self._encode_prompt(
-            prompt, device, num_videos_per_prompt, do_classifier_free_guidance, negative_prompt
+            prompt, self.text_encoder.device, num_videos_per_prompt, do_classifier_free_guidance, negative_prompt
         )
-        
-        #text_embeddings = text_embeddings.float()
+        text_embeddings = text_embeddings.to(device=self.unet.device)
 
         # Prepare timesteps
         self.scheduler.set_timesteps(num_inference_steps, device=device)
@@ -433,14 +433,14 @@ class AnimationInpaintPipeline(DiffusionPipeline):
                         mask_model_input, t, encoder_hidden_states=text_embeddings, \
                         vision_encoder_hidden_states=masked_latents_model_input).sample.to(dtype=latents_dtype)
                 else:
-                    #print('latent_model_input shape',latent_model_input.shape)
+                    #print('latent_model_input device',latent_model_input.device)
                     noise_pred_uncond = self.unet(latent_model_input[0:1], masked_image_model_input[0:1], \
                         mask_model_input[0:1], t, encoder_hidden_states=text_embeddings[0:1], \
-                        vision_encoder_hidden_states=masked_latents_model_input).sample.to(dtype=latents_dtype)
+                        vision_encoder_hidden_states=masked_latents_model_input, device=unet_device).sample.to(dtype=latents_dtype)
                     
                     noise_pred_text = self.unet(latent_model_input[1:2], masked_image_model_input[1:2], \
                         mask_model_input[1:2], t, encoder_hidden_states=text_embeddings[1:2], \
-                        vision_encoder_hidden_states=masked_latents_model_input).sample.to(dtype=latents_dtype)
+                        vision_encoder_hidden_states=masked_latents_model_input, device=unet_device).sample.to(dtype=latents_dtype)
 
                     noise_pred = torch.cat([noise_pred_uncond, noise_pred_text], dim=0)
 
@@ -450,7 +450,7 @@ class AnimationInpaintPipeline(DiffusionPipeline):
                     noise_pred = noise_pred_uncond + guidance_scale * (noise_pred_text - noise_pred_uncond)
 
                 # compute the previous noisy sample x_t -> x_t-1
-                latents = self.scheduler.step(noise_pred, t, latents, **extra_step_kwargs).prev_sample
+                latents = self.scheduler.step(noise_pred.to(unet_device), t.to(unet_device), latents.to(unet_device), **extra_step_kwargs).prev_sample
                 #print('latents after denoising shape',latents.shape)
 
                 # call the callback, if provided
