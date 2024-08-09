@@ -186,11 +186,15 @@ python3 valid_code_release_with_T2I_LoRA.py --config ./configs/code_release.yaml
   <img src="https://github.com/zibojia/COCOCO/blob/main/__asset__/DEMO.PNG" alt="DEMO" style="width: 80%;"/>
 </p>
 
+**Try our demo with original COCOCO**
 ```
 CUDA_VISIBLE_DEVICES=0,1 python3 app.py --config ./configs/code_release.yaml --model_path [model_path] --pretrain_model_path [pretrain_model_path] --sub_folder [sub_folder]
-CUDA_VISIBLE_DEVICES=0,1 python3 app_with_T2I_LoRA.py --config ./configs/code_release.yaml --text_lora_path [text_lora_path] --unet_lora_path [unet_lora_path] --beta_text [beta_text] --beta_vae [beta_vae] --beta_unet [beta_unet] --text_model_path [text_model_path] --unet_model_path [unet_model_path] --vae_model_path [vae_model_path]  --model_path [model_path] --pretrain_model_path [pretrain_model_path] --sub_folder [sub_folder]
 ```
 
+**Try our demo with LoRA and text-image inpainting model**
+```
+CUDA_VISIBLE_DEVICES=0,1 python3 app_with_T2I_LoRA.py --config ./configs/code_release.yaml --text_lora_path [text_lora_path] --unet_lora_path [unet_lora_path] --beta_text [beta_text] --beta_vae [beta_vae] --beta_unet [beta_unet] --text_model_path [text_model_path] --unet_model_path [unet_model_path] --vae_model_path [vae_model_path]  --model_path [model_path] --pretrain_model_path [pretrain_model_path] --sub_folder [sub_folder]
+```
 
 ### TO DO
 
