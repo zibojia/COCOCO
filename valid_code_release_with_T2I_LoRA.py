@@ -110,6 +110,8 @@ def main(
 
     state_dict2 = {}
     for key in state_dict:
+        if 'pe' in key:
+            continue
         state_dict2[key.split('module.')[1]] = state_dict[key]
 
     unet.load_state_dict(state_dict2, strict=False)
