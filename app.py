@@ -20,26 +20,23 @@ from utils import load_model, generate_frames
 
 from sam2.build_sam import build_sam2_video_predictor
 
+parser = argparse.ArgumentParser()
+parser.add_argument("--config",   type=str, required=True)
+parser.add_argument("--model_path", type=str, default="../")
+parser.add_argument("--pretrain_model_path", type=str, default="../")
+parser.add_argument("--sub_folder", type=str, default="unet")
+args = parser.parse_args()
+
 sam2_checkpoint = "./checkpoints/sam2_hiera_large.pt"
 model_cfg = "sam2_hiera_l.yaml"
 
 predictor = build_sam2_video_predictor(model_cfg, sam2_checkpoint)
 
-config = OmegaConf.load("./configs/code_release.yaml")
-validation_pipeline = load_model(model_path="../", \
-    sub_folder="unet2", \
-    pretrained_model_path="/data/home/zibojia/StableDiffusion/", \
+config = OmegaConf.load(args.config)
+validation_pipeline = load_model(model_path=args.model_path, \
+    sub_folder=args.sub_folder, \
+    pretrained_model_path=args.pretrain_model_path, \
     **config)
-
-video_path = 'images/images.npy'
-mask_path = 'images/masks.npy'
-validation_images2 = 2*(np.load(video_path)/255.0 - 0.5)
-validation_masks2 = np.load(mask_path)/255.0
-
-print('validation_images2', validation_images2.shape)
-print('validation_masks2', validation_masks2.shape)
-
-
 
 def init_state(
         offload_video_to_cpu=False,
@@ -108,7 +105,7 @@ def get_frames_from_video(video_input, video_state):
     frames = vr.get_batch(list(range(len(vr)))).asnumpy()
     inference_state = predictor.init_state(images=frames)
     fps = 30
-    image_size = (frames[0].shape[0],frames[0].shape[1]) 
+    image_size = (frames[0].shape[0],frames[0].shape[1])
     # initialize video_state
     video_state = {
         "user_name": user_name,
@@ -234,7 +231,7 @@ def show_mask(video_state, interactive_state, mask_dropdown):
         mask_number = int(mask_dropdown[i].split("_")[1]) - 1
         mask = interactive_state["multi_mask"]["masks"][mask_number]
         select_frame = mask_painter(select_frame, mask.astype('uint8'), mask_color=mask_number+2)
-    
+
     operation_log = [("",""), ("Select {} for tracking or inpainting".format(mask_dropdown),"Normal")]
     return select_frame, operation_log
 
@@ -261,7 +258,7 @@ def vos_tracking_video(inference_state, video_state, interactive_state, mask_dro
     masks = np.array(masks)
 
     painted_images = None
-    if interactive_state["track_end_number"]: 
+    if interactive_state["track_end_number"]:
         video_state["masks"][video_state["select_frame_number"]:interactive_state["track_end_number"]] = masks
         org_images = video_state["origin_images"][video_state["select_frame_number"]:interactive_state["track_end_number"]]
         color = 255*np.ones((1, org_images.shape[-3], org_images.shape[-2], 3)) * np.array([[[[0,1,1]]]])
@@ -276,10 +273,10 @@ def vos_tracking_video(inference_state, video_state, interactive_state, mask_dro
 
     video_output = generate_video_from_frames(video_state["painted_images"], output_path="./result/track/{}".format(video_state["video_name"]), fps=video_state["fps"]) # import video_input to name the output video
     interactive_state["inference_times"] += 1
-    
+
     return inference_state, video_output, video_state, interactive_state, operation_log
 
-# inpaint 
+# inpaint
 def inpaint_video(video_state, text_pos_input, text_neg_input, interactive_state, mask_dropdown):
     operation_log = [("",""), ("Removed the selected masks.","Normal")]
 
@@ -337,7 +334,7 @@ description = """<p>Gradio demo for COCOCO</p>"""
 
 with gr.Blocks() as iface:
     """
-        state for 
+        state for
     """
     click_state = gr.State([[],[]])
     interactive_state = gr.State({
@@ -376,20 +373,20 @@ with gr.Blocks() as iface:
         # for user video input
         with gr.Column():
             with gr.Row():
-                video_input = gr.Video(autosize=True)
+                video_input = gr.Video()#autosize=True)
                 with gr.Column():
                     video_info = gr.Textbox(label="Video Info")
                     resize_info = gr.Textbox(value="If you want to use the inpaint function, it is best to git clone the repo and use a machine with more VRAM locally. \
                                             Alternatively, you can use the resize ratio slider to scale down the original image to around 360P resolution for faster processing.", label="Tips for running this demo.")
                     resize_ratio_slider = gr.Slider(minimum=0.02, maximum=1, step=0.02, value=1, label="Resize ratio", visible=True)
-          
+
 
             with gr.Row():
                 # put the template frame under the radio button
                 with gr.Column():
                     # extract frames
                     with gr.Column():
-                        extract_frames_button = gr.Button(value="Get video info", interactive=True, variant="primary") 
+                        extract_frames_button = gr.Button(value="Get video info", interactive=True, variant="primary")
 
                      # click points settins, negative or positive, mode continuous or single
                     with gr.Row():
@@ -400,46 +397,46 @@ with gr.Blocks() as iface:
                                 label="Point prompt",
                                 interactive=True,
                                 visible=False)
-                            clear_button_click = gr.Button(value="Clear clicks", interactive=True, visible=False).style(height=160)
-                    template_frame = gr.Image(type="pil",interactive=True, elem_id="template_frame", visible=False).style(height=360)
+                            clear_button_click = gr.Button(value="Clear clicks", interactive=True, visible=False)#.style(height=160)
+                    template_frame = gr.Image(type="pil",interactive=True, elem_id="template_frame", visible=False)#.style(height=360)
                     with gr.Row():
                         image_selection_slider = gr.Slider(minimum=1, maximum=100, step=1, value=1, label="Track start frame", visible=False)
                         track_pause_number_slider = gr.Slider(minimum=1, maximum=100, step=1, value=1, label="Track end frame", visible=False)
                     text_pos_input = gr.Textbox(label="Positive Prompt", placeholder="positive prompt...", interactive=True, visible=False)
                     text_neg_input = gr.Textbox(label="Negative Prompt", placeholder="negative prompt...", interactive=True, visible=False)
-            
+
                 with gr.Column():
                     run_status = gr.HighlightedText(value=[("Text","Error"),("to be","Label 2"),("highlighted","Label 3")], visible=False)
                     mask_dropdown = gr.Dropdown(multiselect=True, value=[], label="Mask selection", info=".", visible=False)
-                    video_output = gr.Video(autosize=True, visible=False).style(height=360)
+                    video_output = gr.Video(visible=False)#gr.Video(autosize=True, visible=False)#.style(height=360)
                     with gr.Row():
                         tracking_video_predict_button = gr.Button(value="Tracking", visible=False)
                         inpaint_video_predict_button = gr.Button(value="Inpainting", visible=False)
 
-    # first step: get the video information 
+    # first step: get the video information
     extract_frames_button.click(
         fn=get_frames_from_video,
         inputs=[
             video_input, video_state
         ],
         outputs=[text_pos_input, text_neg_input, inference_state, video_state, video_info, template_frame,
-                 image_selection_slider, track_pause_number_slider, 
-                 point_prompt, clear_button_click, template_frame, tracking_video_predict_button, 
-                 video_output, mask_dropdown, inpaint_video_predict_button, 
+                 image_selection_slider, track_pause_number_slider,
+                 point_prompt, clear_button_click, template_frame, tracking_video_predict_button,
+                 video_output, mask_dropdown, inpaint_video_predict_button,
                  run_status]
-    )   
+    )
 
     # second step: select images from slider
-    image_selection_slider.release(fn=select_template, 
-                                   inputs=[image_selection_slider, video_state, interactive_state], 
+    image_selection_slider.release(fn=select_template,
+                                   inputs=[image_selection_slider, video_state, interactive_state],
                                    outputs=[template_frame, video_state, interactive_state, run_status], api_name="select_image")
-    track_pause_number_slider.release(fn=get_end_number, 
-                                   inputs=[track_pause_number_slider, video_state, interactive_state], 
+    track_pause_number_slider.release(fn=get_end_number,
+                                   inputs=[track_pause_number_slider, video_state, interactive_state],
                                    outputs=[template_frame, interactive_state, run_status], api_name="end_image")
-    resize_ratio_slider.release(fn=get_resize_ratio, 
-                                   inputs=[resize_ratio_slider, interactive_state], 
+    resize_ratio_slider.release(fn=get_resize_ratio,
+                                   inputs=[resize_ratio_slider, interactive_state],
                                    outputs=[interactive_state], api_name="resize_ratio")
-    
+
     # click select image to get mask using sam
     template_frame.select(
         fn=sam_refine,
@@ -467,11 +464,11 @@ with gr.Blocks() as iface:
         inputs=[video_state, interactive_state, mask_dropdown],
         outputs=[template_frame, run_status]
     )
-    
+
     # clear input
     video_input.clear(
         lambda: (
-        gr.update(visible=False), 
+        gr.update(visible=False),
         gr.update(visible=False),
         init_state(),
         {
@@ -503,10 +500,10 @@ with gr.Blocks() as iface:
         None,
         gr.update(visible=False), gr.update(visible=False), gr.update(visible=False), gr.update(visible=False), \
         gr.update(visible=False), gr.update(visible=False), gr.update(visible=False, value=[]), gr.update(visible=False), \
-        gr.update(visible=False), gr.update(visible=False), gr.update(visible=False)           
+        gr.update(visible=False), gr.update(visible=False), gr.update(visible=False)
         ),
         [],
-        [ 
+        [
             text_pos_input,
             text_neg_input,
             inference_state,
@@ -515,8 +512,8 @@ with gr.Blocks() as iface:
             click_state,
             video_output,
             template_frame,
-            tracking_video_predict_button, image_selection_slider , track_pause_number_slider, point_prompt, 
-            clear_button_click, template_frame, tracking_video_predict_button, video_output, 
+            tracking_video_predict_button, image_selection_slider , track_pause_number_slider, point_prompt,
+            clear_button_click, template_frame, tracking_video_predict_button, video_output,
             mask_dropdown, inpaint_video_predict_button, run_status
         ],
         queue=False,
@@ -528,6 +525,6 @@ with gr.Blocks() as iface:
         inputs = [inference_state, video_state, click_state],
         outputs = [inference_state, template_frame, click_state, run_status],
     )
-iface.queue(concurrency_count=1)
-iface.launch(debug=True, enable_queue=True, server_port=10087, server_name="0.0.0.0")
+#iface.queue()#concurrency_count=1)
+iface.launch(server_port=8000, server_name="0.0.0.0")
 # iface.launch(debug=True, enable_queue=True)
