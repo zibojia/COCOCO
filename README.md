@@ -95,7 +95,14 @@ mkdir [cococo_folder_name]; cd [cococo_folder_name]; wget [cococo_download_link]
 ### 3. Run our validation script.
 ```run_code
 
-python3 valid_code_release.py --config ./configs/code_release.yaml --prompt "Trees. Snow mountains. best quality." --negative_prompt "worst quality. bad quality." --guidance_scale 10 --video_path ./images/ --model_path [cococo_folder_name] --pretrain_model_path [sd_folder_name] --sub_folder unet
+python3 valid_code_release.py --config ./configs/code_release.yaml \
+--prompt "Trees. Snow mountains. best quality." \
+--negative_prompt "worst quality. bad quality." \
+--guidance_scale 10 \
+--video_path ./images/ \
+--model_path [cococo_folder_name] \
+--pretrain_model_path [sd_folder_name] \
+--sub_folder unet
 
 ```
 
@@ -188,7 +195,11 @@ python3 valid_code_release_with_T2I_LoRA.py --config ./configs/code_release.yaml
 
 **Try our demo with original COCOCO**
 ```
-CUDA_VISIBLE_DEVICES=0,1 python3 app.py --config ./configs/code_release.yaml --model_path [model_path] --pretrain_model_path [pretrain_model_path] --sub_folder [sub_folder]
+CUDA_VISIBLE_DEVICES=0,1 python3 app.py \
+--config ./configs/code_release.yaml \
+--model_path [model_path] \
+--pretrain_model_path [pretrain_model_path] \
+--sub_folder [sub_folder]
 ```
 
 **Try our demo with LoRA and checkpoint**
@@ -198,7 +209,19 @@ The checkpoint is [available](https://mycuhk-my.sharepoint.com/:f:/g/personal/11
 The LoRA is [available](https://mycuhk-my.sharepoint.com/:f:/g/personal/1155203591_link_cuhk_edu_hk/EiqYrc8lKUhFkpEb-DC8CV8BJPbqkJsyvz66cjXOCnDS1Q?e=hAgbi9).
 
 ```
-CUDA_VISIBLE_DEVICES=0,1 python3 app_with_T2I_LoRA.py --config ./configs/code_release.yaml --text_lora_path [text_lora_path] --unet_lora_path [unet_lora_path] --beta_text [beta_text] --beta_vae [beta_vae] --beta_unet [beta_unet] --text_model_path [text_model_path] --unet_model_path [unet_model_path] --vae_model_path [vae_model_path]  --model_path [model_path] --pretrain_model_path [pretrain_model_path] --sub_folder [sub_folder]
+CUDA_VISIBLE_DEVICES=0,1 python3 app_with_T2I_LoRA.py \
+--config ./configs/code_release.yaml \
+--text_lora_path [text_lora_path] \
+--unet_lora_path [unet_lora_path] \
+--beta_text [beta_text] \
+--beta_vae [beta_vae] \
+--beta_unet [beta_unet] \
+--text_model_path [text_model_path] \
+--unet_model_path [unet_model_path] \
+--vae_model_path [vae_model_path]  \
+--model_path [model_path] \
+--pretrain_model_path [pretrain_model_path] \
+--sub_folder [sub_folder]
 ```
 
 ### TO DO
