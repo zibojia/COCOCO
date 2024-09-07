@@ -184,13 +184,34 @@ lora_unet_up_blocks_3_resnets_0_conv2.lora_up.weight
 ```
 
 ```
-python3 convert_lora.py --tensor_path [tensor_path] --unet_path [unet_path] --text_encoder_path [text_encoder_path] --vae_path [vae_path] --regulation_path ./lora.json --target_prefix [target_prefix]
+python3 convert_lora.py \
+--tensor_path [tensor_path] \
+--unet_path [unet_path] \
+--text_encoder_path [text_encoder_path] \
+--vae_path [vae_path] \
+--regulation_path ./lora.json \
+--target_prefix [target_prefix]
 ```
 
 **3. You can use customized T2I or LoRA to create vision content in the masks.**
 
 ```
-python3 valid_code_release_with_T2I_LoRA.py --config ./configs/code_release.yaml --guidance_scale 10 --video_path [video_path] --masks_path [masks_path] --model_path [model_path] --pretrain_model_path [pretrain_model_path] --sub_folder [sub_folder] --unet_lora_path [unet_lora_path] --beta_unet 0.75 --text_lora_path [text_lora_path] --beta_text 0.75 --unet_model_path [unet_model_path] --text_model_path [text_model_path] --vae_model_path [vae_model_path] --prompt [prompt] --negative_prompt [negative_prompt]
+python3 valid_code_release_with_T2I_LoRA.py \
+--config ./configs/code_release.yaml --guidance_scale 10 \
+--video_path [video_path] \
+--masks_path [masks_path] \
+--model_path [model_path] \
+--pretrain_model_path [pretrain_model_path] \
+--sub_folder [sub_folder] \
+--unet_lora_path [unet_lora_path] \
+--beta_unet 0.75 \
+--text_lora_path [text_lora_path] \
+--beta_text 0.75 \
+--unet_model_path [unet_model_path] \
+--text_model_path [text_model_path] \
+--vae_model_path [vae_model_path] \
+--prompt [prompt] \
+--negative_prompt [negative_prompt]
 ```
 
 ### 5. COCOCO INFERENCE with SAM2
