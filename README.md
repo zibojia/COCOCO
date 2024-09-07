@@ -84,10 +84,10 @@ pip3 install -r requirements.txt
 pip3 install -e .
 ```
 
-*If everything goes well, I think you can turn to the next steps:)*
+*If everything goes well, I think you can turn to the next steps*:)
 
 ## Usage
-### 1. Download pretrained models. 
+### Step 1. Download pretrained models. 
 
 ***Note that our method requires both parameters of SD1.5 inpainting and cococo.***
 
@@ -111,8 +111,9 @@ mkdir [cococo_folder_name]; cd [cococo_folder_name]; wget [cococo_download_link]
 
 ### 2. Prepare the mask
 
-**You can obtain mask by [GroundingDINO](https://github.com/IDEA-Research/GroundingDINO) or [Track-Anything](https://github.com/gaomingqi/Track-Anything) or our [Demo Code](https://github.com/zibojia/COCOCO?tab=readme-ov-file#5-cococo-inference-with-sam2), or draw masks by yourself.**
+**~~You can obtain mask by [GroundingDINO](https://github.com/IDEA-Research/GroundingDINO) or [Track-Anything](https://github.com/gaomingqi/Track-Anything), or draw masks by yourself.~~**
 
+**We release the demo code to use the SAM2 to implement Video Inpainting Anything. Try our [Demo](https://github.com/zibojia/COCOCO?tab=readme-ov-file#5-cococo-inference-with-sam2)!**
 
 ### 3. Run our validation script.
 ```run_code
