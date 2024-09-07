@@ -98,11 +98,11 @@ mkdir [cococo_folder_name]; cd [cococo_folder_name]; wget [cococo_download_link]
 python3 valid_code_release.py --config ./configs/code_release.yaml \
 --prompt "Trees. Snow mountains. best quality." \
 --negative_prompt "worst quality. bad quality." \
---guidance_scale 10 \
---video_path ./images/ \
+--guidance_scale 10 \ # the cfg number, higher means more powerful text controlability
+--video_path ./images/ \ # the path that store the video, the format is the images.npy and masks.npy
 --model_path [cococo_folder_name] \
---pretrain_model_path [sd_folder_name] \
---sub_folder unet
+--pretrain_model_path [sd_folder_name] \ # the path that store the pretrained stable inpainting model, e.g. stable-diffusion-inpainting
+--sub_folder unet # set the subfolder of pretrained stable inpainting model to get the unet checkpoints
 
 ```
 
