@@ -67,7 +67,7 @@
 #### Step1. Installation Checklist
 *Before install the dependencies, you should check the following requirements to overcome the installation failure.*
 - [x] You have a GPU with at least 24G GPU memory.
-- [x] Your CUDA version is greater than 12.0.
+- [x] Your CUDA with nvcc version is greater than 12.0.
 - [x] Your Pytorch version is greater than 2.4.
 - [x] Your gcc version is greater than 9.4.
 - [x] Your diffusers version is 0.11.1.
@@ -83,6 +83,8 @@ pip3 install -r requirements.txt
 # -----------------------------Compile the SAM2--------------------------------------------
 pip3 install -e .
 ```
+
+*If everything goes well, I think you can turn to the next steps:)*
 
 ## Usage
 ### 1. Download pretrained models. 
