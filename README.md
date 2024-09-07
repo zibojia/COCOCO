@@ -249,6 +249,8 @@
   --beta_unet 0.75 \ # the hyper-parameter $beta$ for unet LoRA weights
   --text_lora_path [text_lora_path] \ #  the LoRA weights for text_encoder
   --beta_text 0.75 \ # the hyper-parameter $beta$ for text encoder LoRA weights
+  --beta_vae 0.75 \ # the hyper-parameter $beta$ for vae LoRA weights
+  --vae_lora_path [text_lora_path] \ #  the LoRA weights for vae
   --unet_model_path [unet_model_path] \ # set the path to SD1.5 unet weights, e.g. stable-diffusion-v1-5-inpainting/unet/diffusion_pytorch_model.bin 
   --text_model_path [text_model_path] \ # set the text encoder path, e.g. stable-diffusion-v1-5-inpainting/text_encoder/pytorch_model.bin
   --vae_model_path [vae_model_path] \ # set the vae path, e.g. stable-diffusion-v1-5-inpainting/vae/diffusion_pytorch_model.bin
@@ -283,9 +285,9 @@
       --unet_lora_path [unet_lora_path] \  #  the LoRA weights for unet
       --text_lora_path [text_lora_path] \ #  the LoRA weights for text_encoder
       --vae_lora_path [vae_lora_path] \  #  the LoRA weights for vae
-      --beta_unet [beta_unet] \ # the hyper-parameter $beta$ for unet LoRA weights
-      --beta_text [beta_text] \ # the hyper-parameter $beta$ for text_encoder LoRA weights
-      --beta_vae [beta_vae] \ # the hyper-parameter $beta$ for vae LoRA weights
+      --beta_unet 0.75 \ # the hyper-parameter $beta$ for unet LoRA weights
+      --beta_text 0.75 \ # the hyper-parameter $beta$ for text_encoder LoRA weights
+      --beta_vae 0.75 \ # the hyper-parameter $beta$ for vae LoRA weights
       --text_model_path [text_model_path] \ # set the text encoder path, e.g. stable-diffusion-v1-5-inpainting/text_encoder/pytorch_model.bin
       --unet_model_path [unet_model_path] \ # set the path to SD1.5 unet weights, e.g. stable-diffusion-v1-5-inpainting/unet/diffusion_pytorch_model.bin 
       --vae_model_path [vae_model_path]  \ # set the vae path, e.g. stable-diffusion-v1-5-inpainting/vae/diffusion_pytorch_model.bin
