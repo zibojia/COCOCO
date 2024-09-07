@@ -171,14 +171,6 @@ python3 valid_code_release.py --config ./configs/code_release.yaml \
     </tr>
 </table>
 
-Our idea is based on the [task vector](https://arxiv.org/abs/2212.04089).
-
-Surprisingly, we found that inpainting model is compatiable with T2I model, even the first convlutional channel is mimatched. 
-
-<p align="center">
-  <img src="https://github.com/zibojia/COCOCO/blob/main/__asset__/task.PNG" alt="COCOCO" style="width: 60%;"/>
-</p>
-
 #### Convert safetensors to Pytorch weights
 
 * **For the model using different key, we use the following script to process opensource T2I model.**
@@ -227,26 +219,28 @@ Surprisingly, we found that inpainting model is compatiable with T2I model, even
     --target_prefix [target_prefix]
   ```
 
-**3. You can use customized T2I or LoRA to create vision content in the masks.**
+#### Take Pytorch weights and add them on CoCoCo to create personalized video inpainting
 
-```
-python3 valid_code_release_with_T2I_LoRA.py \
---config ./configs/code_release.yaml --guidance_scale 10 \
---video_path [video_path] \
---masks_path [masks_path] \
---model_path [model_path] \
---pretrain_model_path [pretrain_model_path] \
---sub_folder [sub_folder] \
---unet_lora_path [unet_lora_path] \
---beta_unet 0.75 \
---text_lora_path [text_lora_path] \
---beta_text 0.75 \
---unet_model_path [unet_model_path] \
---text_model_path [text_model_path] \
---vae_model_path [vae_model_path] \
---prompt [prompt] \
---negative_prompt [negative_prompt]
-```
+  **You can use customized T2I or LoRA to create vision content in the masks.**
+
+  ```
+  python3 valid_code_release_with_T2I_LoRA.py \
+  --config ./configs/code_release.yaml --guidance_scale 10 \
+  --video_path [video_path] \
+  --masks_path [masks_path] \
+  --model_path [model_path] \
+  --pretrain_model_path [pretrain_model_path] \
+  --sub_folder [sub_folder] \
+  --unet_lora_path [unet_lora_path] \
+  --beta_unet 0.75 \
+  --text_lora_path [text_lora_path] \
+  --beta_text 0.75 \
+  --unet_model_path [unet_model_path] \
+  --text_model_path [text_model_path] \
+  --vae_model_path [vae_model_path] \
+  --prompt [prompt] \
+  --negative_prompt [negative_prompt]
+  ```
 
 ### 5. COCOCO INFERENCE with SAM2
 
