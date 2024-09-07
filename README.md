@@ -180,10 +180,6 @@ python3 valid_code_release.py --config ./configs/code_release.yaml \
   ```
   model.diffusion_model.input_blocks.1.1.norm.bias
   model.diffusion_model.input_blocks.1.1.norm.weight
-  model.diffusion_model.input_blocks.1.1.proj_in.bias
-  model.diffusion_model.input_blocks.1.1.proj_in.weight
-  model.diffusion_model.input_blocks.1.1.proj_out.bias
-  model.diffusion_model.input_blocks.1.1.proj_out.weight
   ```
 
   Therefore, we develope a tool to convert this type model to the delta of weight.
@@ -191,13 +187,13 @@ python3 valid_code_release.py --config ./configs/code_release.yaml \
   ```
   cd task_vector;
   python3 convert.py \
-    --tensor_path [safetensor_path] \
-    --unet_path [unet_path] \
-    --text_encoder_path [text_encoder_path] \
-    --vae_path [vae_path] \
-    --source_path ./resources \
-    --target_path ./resources \
-    --target_prefix [prefix];
+    --tensor_path [safetensor_path] \ # set the safetensor path
+    --unet_path [unet_path] \ # set the path to SD1.5 unet weights, e.g. stable-diffusion-v1-5-inpainting/unet/diffusion_pytorch_model.bin
+    --text_encoder_path [text_encoder_path] \ # set the text encoder path, e.g. stable-diffusion-v1-5-inpainting/text_encoder/pytorch_model.bin
+    --vae_path [vae_path] \ # set the vae path, e.g. stable-diffusion-v1-5-inpainting/vae/diffusion_pytorch_model.bin
+    --source_path ./resources \ # the path you put some preliminary files, e.g. ./resources
+    --target_path ./resources \ # the path you put some preliminary files, e.g. ./resources
+    --target_prefix [prefix]; # set the converted filename prefix
   ```
 
 * **For the model using same key and trained by LoRA.**
