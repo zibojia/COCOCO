@@ -89,14 +89,17 @@
 #### Step2. Install the requirements
 *If you update your enviroments successfully, then try to install the dependencies by pip.*
 
-```shell
-# -----------------------------Install the CoCoCo dependencies-----------------------------
-pip3 install -r requirements.txt
-```
-```shell
-# -----------------------------Compile the SAM2--------------------------------------------
-pip3 install -e .
-```
+* Install the dependencies
+  
+  ```shell
+  # Install the CoCoCo dependencies
+  pip3 install -r requirements.txt
+  ```
+* Compile the SAM2
+  ```shell
+  # Compile the SAM2
+  pip3 install -e .
+  ```
 
 *If everything goes well, I think you can turn to the next steps.*
 
