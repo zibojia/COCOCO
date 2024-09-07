@@ -55,8 +55,12 @@
     </tr>
 </table>
 
+## Table of Contents
 
-## Usage
+-[Installation](#Usage)
+-[Usage](#Usage)
++[Download pretrained models]
++[]
 
 ### Installation
 
@@ -65,13 +69,14 @@ pip3 install -r requirements.txt
 pip3 install -e .
 ```
 
+## Usage
 ### 1. Download pretrained models. 
 
 **Note that our method requires both parameters of sd1.5 inpainting and cococo.**
 
-**The pretrained image inpainting model is [available](https://huggingface.co/runwayml/stable-diffusion-inpainting).**
+**The pretrained image inpainting model ([Stable Diffusion Inpainting](https://huggingface.co/benjamin-paine/stable-diffusion-v1-5-inpainting).)**
 
-**The weak version pretrained video inpainting model is [available](https://mycuhk-my.sharepoint.com/:f:/g/personal/1155203591_link_cuhk_edu_hk/EoXyViqDi8JEgBDCbxsyPY8BCg7YtkOy73SbBY-3WcQ72w?e=cDZuXM).**
+**The CoCoCo [Checkpoints](https://mycuhk-my.sharepoint.com/:f:/g/personal/1155203591_link_cuhk_edu_hk/EoXyViqDi8JEgBDCbxsyPY8BCg7YtkOy73SbBY-3WcQ72w?e=cDZuXM).**
 
 [1]. The image models are put in [sd_folder_name]. 
 
