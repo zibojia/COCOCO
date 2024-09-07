@@ -74,9 +74,9 @@ pip3 install -e .
 
 ***Note that our method requires both parameters of SD1.5 inpainting and cococo.***
 
-**The pretrained image inpainting model ([Stable Diffusion Inpainting](https://huggingface.co/benjamin-paine/stable-diffusion-v1-5-inpainting).)**
+ * **The pretrained image inpainting model ([Stable Diffusion Inpainting](https://huggingface.co/benjamin-paine/stable-diffusion-v1-5-inpainting).)**
 
-**The CoCoCo [Checkpoints](https://mycuhk-my.sharepoint.com/:f:/g/personal/1155203591_link_cuhk_edu_hk/EoXyViqDi8JEgBDCbxsyPY8BCg7YtkOy73SbBY-3WcQ72w?e=cDZuXM).**
+ * **The CoCoCo [Checkpoints](https://mycuhk-my.sharepoint.com/:f:/g/personal/1155203591_link_cuhk_edu_hk/EoXyViqDi8JEgBDCbxsyPY8BCg7YtkOy73SbBY-3WcQ72w?e=cDZuXM).**
 
 [1]. The image models are put in [sd_folder_name]. 
 
