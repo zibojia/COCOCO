@@ -200,7 +200,7 @@ python3 valid_code_release.py --config ./configs/code_release.yaml \
     --target_prefix [prefix];
   ```
 
-  * **For the model using same key and trained by LoRA.**
+* **For the model using same key and trained by LoRA.**
 
   For example, the [Ghibli](https://civitai.com/models/54233/ghiblibackground) LoRA.
 
