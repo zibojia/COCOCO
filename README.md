@@ -75,13 +75,14 @@
 #### Install the requirements
 *If you update your enviroments successfully, then try to install the dependencies by pip.*
 
-```
+```shell
 # -----------------------------Install the CoCoCo dependencies-----------------------------
 pip3 install -r requirements.txt
+```
+```shell
 # ------------------------------------Compile the SAM2------------------------------------
 pip3 install -e .
 ```
-
 
 ## Usage
 ### 1. Download pretrained models. 
