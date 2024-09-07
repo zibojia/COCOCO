@@ -120,8 +120,7 @@ pip3 install -e .
 
 **By running this code, you can simply get the video inpainting results.**
 
-```run_code
-
+```python
 python3 valid_code_release.py --config ./configs/code_release.yaml \
 --prompt "Trees. Snow mountains. best quality." \
 --negative_prompt "worst quality. bad quality." \
@@ -130,7 +129,6 @@ python3 valid_code_release.py --config ./configs/code_release.yaml \
 --model_path [cococo_folder_name] \ # the path to cococo weights, e.g. ./cococo_weights
 --pretrain_model_path [sd_folder_name] \ # the path that store the pretrained stable inpainting model, e.g. ./stable-diffusion-v1-5-inpainting
 --sub_folder unet # set the subfolder of pretrained stable inpainting model to get the unet checkpoints
-
 ```
 
 ### 4. Personalized Video Inpainting (Optional)
@@ -184,7 +182,7 @@ python3 valid_code_release.py --config ./configs/code_release.yaml \
 
   Therefore, we develope a tool to convert this type model to the delta of weight.
 
-  ```
+  ```python
   cd task_vector;
   python3 convert.py \
     --tensor_path [safetensor_path] \ # set the safetensor path
@@ -219,21 +217,21 @@ python3 valid_code_release.py --config ./configs/code_release.yaml \
 
   **You can use customized T2I or LoRA to create vision content in the masks.**
 
-  ```
+  ```python
   python3 valid_code_release_with_T2I_LoRA.py \
-  --config ./configs/code_release.yaml --guidance_scale 10 \
-  --video_path [video_path] \
-  --masks_path [masks_path] \
-  --model_path [model_path] \
-  --pretrain_model_path [pretrain_model_path] \
-  --sub_folder [sub_folder] \
-  --unet_lora_path [unet_lora_path] \
-  --beta_unet 0.75 \
-  --text_lora_path [text_lora_path] \
-  --beta_text 0.75 \
-  --unet_model_path [unet_model_path] \
-  --text_model_path [text_model_path] \
-  --vae_model_path [vae_model_path] \
+  --config ./configs/code_release.yaml --guidance_scale 10 \ # set this as default
+  --video_path ./images \ # the path that store the videos, the format is the images.npy
+  --masks_path ./images \ # the path that store the masks, the format is the masks.npy
+  --model_path [model_path] \ # # the path that store the cococo weights
+  --pretrain_model_path [pretrain_model_path] \ # the path that store the SD1.5 Inpainting, e.g. ./stable-diffusion-v1-5-inpainting
+  --sub_folder unet \  # set the subfolder of pretrained stable inpainting model to get the unet checkpoints
+  --unet_lora_path [unet_lora_path] \ #  the LoRA weights for unet
+  --beta_unet 0.75 \ # the hyper-parameter $beta$ for unet LoRA weights
+  --text_lora_path [text_lora_path] \ 
+  --beta_text 0.75 \ # the hyper-parameter $beta$ for text encoder LoRA weights
+  --unet_model_path [unet_model_path] \ # set the path to SD1.5 unet weights, e.g. stable-diffusion-v1-5-inpainting/unet/diffusion_pytorch_model.bin 
+  --text_model_path [text_model_path] \ # set the text encoder path, e.g. stable-diffusion-v1-5-inpainting/text_encoder/pytorch_model.bin
+  --vae_model_path [vae_model_path] \ # set the vae path, e.g. stable-diffusion-v1-5-inpainting/vae/diffusion_pytorch_model.bin
   --prompt [prompt] \
   --negative_prompt [negative_prompt]
   ```
