@@ -64,7 +64,7 @@
 
 ### Installation
 
-#### Installation Checklist
+#### Step1. Installation Checklist
 *Before install the dependencies, you should check the following requirements to overcome the installation failure.*
 - [x] You have a GPU with at least 24G GPU memory.
 - [x] Your CUDA version is greater than 12.0.
@@ -72,7 +72,7 @@
 - [x] Your gcc version is greater than 9.4.
 - [x] Your diffusers version is 0.11.1.
 
-#### Install the requirements
+#### Step2. Install the requirements
 *If you update your enviroments successfully, then try to install the dependencies by pip.*
 
 ```shell
