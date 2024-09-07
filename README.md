@@ -108,6 +108,13 @@ python3 valid_code_release.py --config ./configs/code_release.yaml \
 
 ### 4. Using our Inpainting model with T2Is (Optional)
 
+*We give a method to allow users to compose their own personlized video inpainting model by using personalized T2Is <span style="color: red;">WITHOUT TRAINING</span>
+.* There are two steps in total:
+
+1. Transform the personalized image diffusion to personliazed inpainting diffusion.
+   
+2. Add the weight of personalized inpainting model to our CoCoCo.
+
 <table>
     <tr>
     <td><img src="__asset__/gibuli_lora_org.gif"></td>
