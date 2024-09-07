@@ -59,7 +59,7 @@
 
 - [Installation](#Installation)
 - [Usage](#Usage)
-- [Download pretrained models](#1.-download-pretrained-models.)
+- [Download pretrained models](#1-download-pretrained-models)
 + []
 
 ### Installation
