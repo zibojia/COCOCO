@@ -92,7 +92,6 @@ pip3 install -r requirements.txt
 ```shell
 # -----------------------------Compile the SAM2--------------------------------------------
 pip3 install -e .
-```
 
 *If everything goes well, I think you can turn to the next steps.*
 
