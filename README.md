@@ -247,9 +247,9 @@ pip3 install -e .
   ```
   CUDA_VISIBLE_DEVICES=0,1 python3 app.py \
   --config ./configs/code_release.yaml \
-  --model_path [model_path] \
-  --pretrain_model_path [pretrain_model_path] \
-  --sub_folder [sub_folder]
+  --model_path [model_path] \ # the path to cococo weights
+  --pretrain_model_path [pretrain_model_path] \ # the image inpainting pretrained model path, e.g. ./stable-diffusion-v1-5-inpainting
+  --sub_folder [sub_folder] # set unet as default
   ```
 
 * **Try our demo with LoRA and checkpoint**
