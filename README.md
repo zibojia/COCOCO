@@ -80,6 +80,7 @@
 - [x] Your Pytorch version is greater than 2.4.
 - [x] Your gcc version is greater than 9.4.
 - [x] Your diffusers version is 0.11.1.
+- [x] Your gradio version is 3.40.0.
 
 #### Step2. Install the requirements
 *If you update your enviroments successfully, then try to install the dependencies by pip.*
@@ -96,7 +97,7 @@ pip3 install -e .
 *If everything goes well, I think you can turn to the next steps.*
 
 ## Usage
-### Step 1. Download pretrained models. 
+### 1. Download pretrained models. 
 
 ***Note that our method requires both parameters of SD1.5 inpainting and cococo.***
 
@@ -108,7 +109,7 @@ pip3 install -e .
 
 **~~You can obtain mask by [GroundingDINO](https://github.com/IDEA-Research/GroundingDINO) or [Track-Anything](https://github.com/gaomingqi/Track-Anything), or draw masks by yourself.~~**
 
-**We release the demo code to use the SAM2 to implement Video Inpainting Anything. Try our [Demo](https://github.com/zibojia/COCOCO?tab=readme-ov-file#5-cococo-inference-with-sam2)!**
+**We release the gradio demo to use the SAM2 to implement Video Inpainting Anything. Try our [Demo](https://github.com/zibojia/COCOCO?tab=readme-ov-file#5-cococo-inference-with-sam2)!**
 
 <p align="center">
   <img src="https://github.com/zibojia/COCOCO/blob/main/__asset__/DEMO.PNG" alt="DEMO" style="width: 80%;"/>
@@ -116,6 +117,9 @@ pip3 install -e .
 
 
 ### 3. Run our validation script.
+
+**By running this code, you can simply get the video inpainting results.**
+
 ```run_code
 
 python3 valid_code_release.py --config ./configs/code_release.yaml \
@@ -131,11 +135,13 @@ python3 valid_code_release.py --config ./configs/code_release.yaml \
 
 ### 4. Personalized Video Inpainting (Optional)
 
-*We give a method to allow users to compose their own personlized video inpainting model by using personalized T2Is* **WITHOUT TRAINING**. There are two steps in total:
+*We give a method to allow users to compose their own personlized video inpainting model by using personalized T2Is* **WITHOUT TRAINING**. There are three steps in total:
 
-1. Transform the personalized image diffusion to personliazed inpainting diffusion. Substract the weights of personalized image diffusion from SD1.5, and add them on inpainting model. Surprisingly, this method can get a personalized image inpainting model, and it works well:)
+* Convert the opensource model to Pytorch weights.
+  
+* Transform the personalized image diffusion to personliazed inpainting diffusion. Substract the weights of personalized image diffusion from SD1.5, and add them on inpainting model. Surprisingly, this method can get a personalized image inpainting model, and it works well:)
    
-2. Add the weight of personalized inpainting model to our CoCoCo.
+* Add the weight of personalized inpainting model to our CoCoCo.
 
 <table>
     <tr>
