@@ -59,12 +59,12 @@
 
 - [Installation](#Installation)
 - [Usage](#Usage)
-- [Download pretrained models](#1.-Download-pretrained-models.)
+- [Download pretrained models](#1.-download-pretrained-models.)
 + []
 
 ### Installation
 
-### Installation Checklist
+#### Installation Checklist
 *Before install the dependencies, you should check the following requirements to overcome the installation failure.*
 - [x] You have a GPU with at least 24G GPU memory.
 - [x] Your CUDA version is greater than 12.0.
