@@ -108,9 +108,9 @@ python3 valid_code_release.py --config ./configs/code_release.yaml \
 
 ### 4. Using our Inpainting model with T2Is (Optional)
 
-*We give a method to allow users to compose their own personlized video inpainting model by using personalized T2Is* <span style="color: red;">WITHOUT TRAINING</span>. There are two steps in total:
+*We give a method to allow users to compose their own personlized video inpainting model by using personalized T2Is* **WITHOUT TRAINING**. There are two steps in total:
 
-1. Transform the personalized image diffusion to personliazed inpainting diffusion.
+1. Transform the personalized image diffusion to personliazed inpainting diffusion. Substract the weights of personalized image diffusion from SD1.5, and add them on inpainting model. Surprisingly, this method can get a personalized image inpainting model, and it works well:)
    
 2. Add the weight of personalized inpainting model to our CoCoCo.
 
