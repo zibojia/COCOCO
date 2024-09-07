@@ -69,6 +69,10 @@
     - [Transform Personalized Image Inpainting](take-pytorch-weights-and-add-them-on-cococo-to-create-personalized-video-inpainting)
     - [Create Personalized Inpainting Visual Content](take-pytorch-weights-and-add-them-on-cococo-to-create-personalized-video-inpainting)
   - [Inference with SAM2 (Video Inpaint Anything)](#5-cococo-inference-with-sam2)
+- [TODO](#to-do)
+- [Citation](#citation)
+- [Acknowledgement](#acknowledgement)
+
 
 
 ### Installation
