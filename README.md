@@ -57,7 +57,7 @@
 </table>
 
 ## Table of Contents <!-- omit in toc -->
-
+- [Features](#Features)
 - [Installation](#Installation)
 - [Usage](#Usage)
   - [Download pretrained models](#1-download-pretrained-models)
@@ -74,6 +74,16 @@
 - [Acknowledgement](#acknowledgement)
 
 
+### Features
+
+* Consistent text-guided video inpainting
+  * By using damped attention, we have decent inpainting visual content
+* Higher text controlability
+  * We have better text controlability
+* Personalized video inpainting
+  * We develop a training-free method to implement personalized video inpainting by leveraging personalized T2Is
+* Gradio Demo using SAM2
+  * We use SAM2 to create Video Inpaint Anything
 
 ### Installation
 
@@ -89,13 +99,11 @@
 #### Step2. Install the requirements
 *If you update your enviroments successfully, then try to install the dependencies by pip.*
 
-* Install the dependencies
-  
   ```shell
   # Install the CoCoCo dependencies
   pip3 install -r requirements.txt
   ```
-* Compile the SAM2
+
   ```shell
   # Compile the SAM2
   pip3 install -e .
