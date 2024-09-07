@@ -261,22 +261,22 @@ pip3 install -e .
 
   * Run the Gradio demo with LoRA.
 
-  ```python
-  CUDA_VISIBLE_DEVICES=0,1 python3 app_with_T2I_LoRA.py \
-    --config ./configs/code_release.yaml \
-    --unet_lora_path [unet_lora_path] \  #  the LoRA weights for unet
-    --text_lora_path [text_lora_path] \ #  the LoRA weights for text_encoder
-    --vae_lora_path [vae_lora_path] \  #  the LoRA weights for vae
-    --beta_unet [beta_unet] \ # the hyper-parameter $beta$ for unet LoRA weights
-    --beta_text [beta_text] \ # the hyper-parameter $beta$ for text_encoder LoRA weights
-    --beta_vae [beta_vae] \ # the hyper-parameter $beta$ for vae LoRA weights
-    --text_model_path [text_model_path] \ # set the text encoder path, e.g. stable-diffusion-v1-5-inpainting/text_encoder/pytorch_model.bin
-    --unet_model_path [unet_model_path] \ # set the path to SD1.5 unet weights, e.g. stable-diffusion-v1-5-inpainting/unet/diffusion_pytorch_model.bin 
-    --vae_model_path [vae_model_path]  \ # set the vae path, e.g. stable-diffusion-v1-5-inpainting/vae/diffusion_pytorch_model.bin
-    --model_path [model_path] \ # cococo weights
-    --pretrain_model_path [pretrain_model_path] \ # the image inpainting pretrained model path, e.g. ./stable-diffusion-v1-5-inpainting
-    --sub_folder [sub_folder] # the default is unet
-  ```
+    ```python
+    CUDA_VISIBLE_DEVICES=0,1 python3 app_with_T2I_LoRA.py \
+      --config ./configs/code_release.yaml \
+      --unet_lora_path [unet_lora_path] \  #  the LoRA weights for unet
+      --text_lora_path [text_lora_path] \ #  the LoRA weights for text_encoder
+      --vae_lora_path [vae_lora_path] \  #  the LoRA weights for vae
+      --beta_unet [beta_unet] \ # the hyper-parameter $beta$ for unet LoRA weights
+      --beta_text [beta_text] \ # the hyper-parameter $beta$ for text_encoder LoRA weights
+      --beta_vae [beta_vae] \ # the hyper-parameter $beta$ for vae LoRA weights
+      --text_model_path [text_model_path] \ # set the text encoder path, e.g. stable-diffusion-v1-5-inpainting/text_encoder/pytorch_model.bin
+      --unet_model_path [unet_model_path] \ # set the path to SD1.5 unet weights, e.g. stable-diffusion-v1-5-inpainting/unet/diffusion_pytorch_model.bin 
+      --vae_model_path [vae_model_path]  \ # set the vae path, e.g. stable-diffusion-v1-5-inpainting/vae/diffusion_pytorch_model.bin
+      --model_path [model_path] \ # cococo weights
+      --pretrain_model_path [pretrain_model_path] \ # the image inpainting pretrained model path, e.g. ./stable-diffusion-v1-5-inpainting
+      --sub_folder [sub_folder] # the default is unet
+    ```
 
 ### TO DO
 
