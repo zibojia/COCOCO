@@ -60,7 +60,8 @@
 - [Installation](#Installation)
 - [Usage](#Usage)
 - [Download pretrained models](#1-download-pretrained-models)
-+ []
+- [Mask Preparation](#2-prepare-the-mask)
+     - [Video-Inpaint-Anything](#5-cococo-inference-with-sam2) 
 
 ### Installation
 
