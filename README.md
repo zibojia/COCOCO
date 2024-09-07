@@ -84,6 +84,11 @@
   * We develop a training-free method to implement personalized video inpainting by leveraging personalized T2Is
 * Gradio Demo using SAM2
   * We use SAM2 to create Video Inpaint Anything
+* Infinite Video Inpainting
+  * By using the slidding window, you are allowed to inpaint any length videos.
+* Controlable Video Inpainting
+  * By composing with the controlnet, we find that we can inpaint controlable content in the given masked region
+* More inpainting tricks will be released soon...
 
 ### Installation
 
