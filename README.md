@@ -112,7 +112,7 @@ pip3 install -e .
 **We release the gradio demo to use the SAM2 to implement Video Inpainting Anything. Try our [Demo](https://github.com/zibojia/COCOCO?tab=readme-ov-file#5-cococo-inference-with-sam2)!**
 
 <p align="center">
-  <img src="https://github.com/zibojia/COCOCO/blob/main/__asset__/DEMO.PNG" alt="DEMO" style="width: 80%;"/>
+  <img src="https://github.com/zibojia/COCOCO/blob/main/__asset__/DEMO.PNG" alt="DEMO" style="width: 95%;"/>
 </p>
 
 
