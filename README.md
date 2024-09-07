@@ -105,6 +105,8 @@ pip3 install -e .
 
  * **The CoCoCo [Checkpoints](https://mycuhk-my.sharepoint.com/:f:/g/personal/1155203591_link_cuhk_edu_hk/EoXyViqDi8JEgBDCbxsyPY8BCg7YtkOy73SbBY-3WcQ72w?e=cDZuXM).**
 
+**After download, you should put these two models in two folders, the image inpainting folder should contains scheduler, tokenizer, text_encoder, vae, unet, the cococo folder should contain model_0.pth to model-3.pth**
+
 ### 2. Prepare the mask
 
 **~~You can obtain mask by [GroundingDINO](https://github.com/IDEA-Research/GroundingDINO) or [Track-Anything](https://github.com/gaomingqi/Track-Anything), or draw masks by yourself.~~**
