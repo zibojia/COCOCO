@@ -59,15 +59,24 @@
 
 - [Installation](#Installation)
 - [Usage](#Usage)
-- [Download pretrained models](#1.-Download-pretrained models.)
+- [Download pretrained models](#1.-Download-pretrained-models.)
 + []
 
 ### Installation
+
+### Installation Checklist
+*Before install the dependencies, you should check the following requirements to overcome the installation failure.*
+- [x] You have a GPU with at least 24G GPU memory.
+- [x] Your CUDA version is greater than 12.0.
+- [x] Your Pytorch version is greater than 2.4.
+- [x] Your gcc version is greater than 9.4.
 
 ```
 pip3 install -r requirements.txt
 pip3 install -e .
 ```
+
+*Warning: The CUDA version must be greater than 12.0, and Pytorch version must be greater than 2.4, since the SAM2 requires to use these libs to compile the dependencies.*
 
 ## Usage
 ### 1. Download pretrained models. 
