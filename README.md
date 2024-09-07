@@ -101,9 +101,9 @@ pip3 install -e .
 
 ***Note that our method requires both parameters of SD1.5 inpainting and cococo.***
 
- * **The pretrained image inpainting model ([Stable Diffusion Inpainting](https://huggingface.co/benjamin-paine/stable-diffusion-v1-5-inpainting).)**
+   * **The pretrained image inpainting model ([Stable Diffusion Inpainting](https://huggingface.co/benjamin-paine/stable-diffusion-v1-5-inpainting).)**
 
- * **The CoCoCo [Checkpoints](https://mycuhk-my.sharepoint.com/:f:/g/personal/1155203591_link_cuhk_edu_hk/EoXyViqDi8JEgBDCbxsyPY8BCg7YtkOy73SbBY-3WcQ72w?e=cDZuXM).**
+   * **The CoCoCo [Checkpoints](https://mycuhk-my.sharepoint.com/:f:/g/personal/1155203591_link_cuhk_edu_hk/EoXyViqDi8JEgBDCbxsyPY8BCg7YtkOy73SbBY-3WcQ72w?e=cDZuXM).**
 
 * *Warning: the runwayml delete their models and weights, so we must download the image inpainting model from other url.*
 
@@ -124,16 +124,16 @@ pip3 install -e .
 
 **By running this code, you can simply get the video inpainting results.**
 
-```python
-python3 valid_code_release.py --config ./configs/code_release.yaml \
---prompt "Trees. Snow mountains. best quality." \
---negative_prompt "worst quality. bad quality." \
---guidance_scale 10 \ # the cfg number, higher means more powerful text controlability
---video_path ./images/ \ # the path that store the video and masks, the format is the images.npy and masks.npy
---model_path [cococo_folder_name] \ # the path to cococo weights, e.g. ./cococo_weights
---pretrain_model_path [sd_folder_name] \ # the path that store the pretrained stable inpainting model, e.g. ./stable-diffusion-v1-5-inpainting
---sub_folder unet # set the subfolder of pretrained stable inpainting model to get the unet checkpoints
-```
+  ```python
+  python3 valid_code_release.py --config ./configs/code_release.yaml \
+  --prompt "Trees. Snow mountains. best quality." \
+  --negative_prompt "worst quality. bad quality." \
+  --guidance_scale 10 \ # the cfg number, higher means more powerful text controlability
+  --video_path ./images/ \ # the path that store the video and masks, the format is the images.npy and masks.npy
+  --model_path [cococo_folder_name] \ # the path to cococo weights, e.g. ./cococo_weights
+  --pretrain_model_path [sd_folder_name] \ # the path that store the pretrained stable inpainting model, e.g. ./stable-diffusion-v1-5-inpainting
+  --sub_folder unet # set the subfolder of pretrained stable inpainting model to get the unet checkpoints
+  ```
 
 ### 4. Personalized Video Inpainting (Optional)
 
@@ -152,10 +152,6 @@ python3 valid_code_release.py --config ./configs/code_release.yaml \
     <td><img src="__asset__/gibuli_merged2.gif"></td>
     </tr>
 </table>
-
-
-
-
 
 <table>
     <tr>
@@ -219,7 +215,7 @@ python3 valid_code_release.py --config ./configs/code_release.yaml \
 
 #### Take Pytorch weights and add them on CoCoCo to create personalized video inpainting
 
-  * **You can use customized T2I or LoRA to create vision content in the masks.**
+* **You can use customized T2I or LoRA to create vision content in the masks.**
 
   ```python
   python3 valid_code_release_with_T2I_LoRA.py \
@@ -244,13 +240,13 @@ python3 valid_code_release.py --config ./configs/code_release.yaml \
 
 
 * **Try our demo with original COCOCO**
-```
-CUDA_VISIBLE_DEVICES=0,1 python3 app.py \
---config ./configs/code_release.yaml \
---model_path [model_path] \
---pretrain_model_path [pretrain_model_path] \
---sub_folder [sub_folder]
-```
+  ```
+  CUDA_VISIBLE_DEVICES=0,1 python3 app.py \
+  --config ./configs/code_release.yaml \
+  --model_path [model_path] \
+  --pretrain_model_path [pretrain_model_path] \
+  --sub_folder [sub_folder]
+  ```
 
 **Try our demo with LoRA and checkpoint**
 
@@ -260,19 +256,19 @@ CUDA_VISIBLE_DEVICES=0,1 python3 app.py \
 
   ```python
   CUDA_VISIBLE_DEVICES=0,1 python3 app_with_T2I_LoRA.py \
-  --config ./configs/code_release.yaml \
-  --unet_lora_path [unet_lora_path] \  #  the LoRA weights for unet
-  --text_lora_path [text_lora_path] \ #  the LoRA weights for text_encoder
-  --vae_lora_path [vae_lora_path] \  #  the LoRA weights for vae
-  --beta_unet [beta_unet] \ # the hyper-parameter $beta$ for unet LoRA weights
-  --beta_text [beta_text] \ # the hyper-parameter $beta$ for text_encoder LoRA weights
-  --beta_vae [beta_vae] \ # the hyper-parameter $beta$ for vae LoRA weights
-  --text_model_path [text_model_path] \ # set the text encoder path, e.g. stable-diffusion-v1-5-inpainting/text_encoder/pytorch_model.bin
-  --unet_model_path [unet_model_path] \ # set the path to SD1.5 unet weights, e.g. stable-diffusion-v1-5-inpainting/unet/diffusion_pytorch_model.bin 
-  --vae_model_path [vae_model_path]  \ # set the vae path, e.g. stable-diffusion-v1-5-inpainting/vae/diffusion_pytorch_model.bin
-  --model_path [model_path] \ # cococo weights
-  --pretrain_model_path [pretrain_model_path] \ # the image inpainting pretrained model path, e.g. ./stable-diffusion-v1-5-inpainting
-  --sub_folder [sub_folder] # the default is unet
+    --config ./configs/code_release.yaml \
+    --unet_lora_path [unet_lora_path] \  #  the LoRA weights for unet
+    --text_lora_path [text_lora_path] \ #  the LoRA weights for text_encoder
+    --vae_lora_path [vae_lora_path] \  #  the LoRA weights for vae
+    --beta_unet [beta_unet] \ # the hyper-parameter $beta$ for unet LoRA weights
+    --beta_text [beta_text] \ # the hyper-parameter $beta$ for text_encoder LoRA weights
+    --beta_vae [beta_vae] \ # the hyper-parameter $beta$ for vae LoRA weights
+    --text_model_path [text_model_path] \ # set the text encoder path, e.g. stable-diffusion-v1-5-inpainting/text_encoder/pytorch_model.bin
+    --unet_model_path [unet_model_path] \ # set the path to SD1.5 unet weights, e.g. stable-diffusion-v1-5-inpainting/unet/diffusion_pytorch_model.bin 
+    --vae_model_path [vae_model_path]  \ # set the vae path, e.g. stable-diffusion-v1-5-inpainting/vae/diffusion_pytorch_model.bin
+    --model_path [model_path] \ # cococo weights
+    --pretrain_model_path [pretrain_model_path] \ # the image inpainting pretrained model path, e.g. ./stable-diffusion-v1-5-inpainting
+    --sub_folder [sub_folder] # the default is unet
   ```
 
 ### TO DO
