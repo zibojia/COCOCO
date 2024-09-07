@@ -55,12 +55,12 @@
     </tr>
 </table>
 
-## Table of Contents
+## Table of Contents <!-- omit in toc -->
 
--[Installation](#Usage)
--[Usage](#Usage)
-+[Download pretrained models]
-+[]
+- [Installation](#Installation)
+- [Usage](#Usage)
+- [Download pretrained models](#1.-Download-pretrained models.)
++ []
 
 ### Installation
 
@@ -72,7 +72,7 @@ pip3 install -e .
 ## Usage
 ### 1. Download pretrained models. 
 
-**Note that our method requires both parameters of sd1.5 inpainting and cococo.**
+***Note that our method requires both parameters of SD1.5 inpainting and cococo.***
 
 **The pretrained image inpainting model ([Stable Diffusion Inpainting](https://huggingface.co/benjamin-paine/stable-diffusion-v1-5-inpainting).)**
 
