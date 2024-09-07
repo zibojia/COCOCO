@@ -250,9 +250,9 @@ pip3 install -e .
 
 * **Try our demo with LoRA and checkpoint**
 
-  * The checkpoint is [available](https://mycuhk-my.sharepoint.com/:f:/g/personal/1155203591_link_cuhk_edu_hk/EpuCr0azYKxJg7QJ71Mln9UBYDLzoFm6GQWYN9UwCauhYg?e=rwPAhY).
+  * The personalized image inpainting models is [available](https://mycuhk-my.sharepoint.com/:f:/g/personal/1155203591_link_cuhk_edu_hk/EpuCr0azYKxJg7QJ71Mln9UBYDLzoFm6GQWYN9UwCauhYg?e=rwPAhY).
 
-  * The LoRA is [available](https://mycuhk-my.sharepoint.com/:f:/g/personal/1155203591_link_cuhk_edu_hk/EiqYrc8lKUhFkpEb-DC8CV8BJPbqkJsyvz66cjXOCnDS1Q?e=hAgbi9).
+  * The personalized image inpainting LoRA is [available](https://mycuhk-my.sharepoint.com/:f:/g/personal/1155203591_link_cuhk_edu_hk/EiqYrc8lKUhFkpEb-DC8CV8BJPbqkJsyvz66cjXOCnDS1Q?e=hAgbi9).
 
   ```python
   CUDA_VISIBLE_DEVICES=0,1 python3 app_with_T2I_LoRA.py \
