@@ -70,13 +70,15 @@
 - [x] Your CUDA version is greater than 12.0.
 - [x] Your Pytorch version is greater than 2.4.
 - [x] Your gcc version is greater than 9.4.
+- [x] Your diffusers version is 0.11.1.
+
+*If you update your enviroments successfully, then try to install the dependencies by pip.*
 
 ```
 pip3 install -r requirements.txt
 pip3 install -e .
 ```
 
-*Warning: The CUDA version must be greater than 12.0, and Pytorch version must be greater than 2.4, since the SAM2 requires to use these libs to compile the dependencies.*
 
 ## Usage
 ### 1. Download pretrained models. 
