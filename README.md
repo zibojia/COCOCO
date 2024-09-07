@@ -215,19 +215,19 @@ python3 valid_code_release.py --config ./configs/code_release.yaml \
 
 #### Take Pytorch weights and add them on CoCoCo to create personalized video inpainting
 
-  **You can use customized T2I or LoRA to create vision content in the masks.**
+  * **You can use customized T2I or LoRA to create vision content in the masks.**
 
   ```python
   python3 valid_code_release_with_T2I_LoRA.py \
   --config ./configs/code_release.yaml --guidance_scale 10 \ # set this as default
   --video_path ./images \ # the path that store the videos, the format is the images.npy
   --masks_path ./images \ # the path that store the masks, the format is the masks.npy
-  --model_path [model_path] \ # # the path that store the cococo weights
+  --model_path [model_path] \ # the path that store the cococo weights
   --pretrain_model_path [pretrain_model_path] \ # the path that store the SD1.5 Inpainting, e.g. ./stable-diffusion-v1-5-inpainting
   --sub_folder unet \  # set the subfolder of pretrained stable inpainting model to get the unet checkpoints
   --unet_lora_path [unet_lora_path] \ #  the LoRA weights for unet
   --beta_unet 0.75 \ # the hyper-parameter $beta$ for unet LoRA weights
-  --text_lora_path [text_lora_path] \ 
+  --text_lora_path [text_lora_path] \ #  the LoRA weights for text_encoder
   --beta_text 0.75 \ # the hyper-parameter $beta$ for text encoder LoRA weights
   --unet_model_path [unet_model_path] \ # set the path to SD1.5 unet weights, e.g. stable-diffusion-v1-5-inpainting/unet/diffusion_pytorch_model.bin 
   --text_model_path [text_model_path] \ # set the text encoder path, e.g. stable-diffusion-v1-5-inpainting/text_encoder/pytorch_model.bin
@@ -239,7 +239,7 @@ python3 valid_code_release.py --config ./configs/code_release.yaml \
 ### 5. COCOCO INFERENCE with SAM2
 
 
-**Try our demo with original COCOCO**
+* **Try our demo with original COCOCO**
 ```
 CUDA_VISIBLE_DEVICES=0,1 python3 app.py \
 --config ./configs/code_release.yaml \
@@ -250,25 +250,26 @@ CUDA_VISIBLE_DEVICES=0,1 python3 app.py \
 
 **Try our demo with LoRA and checkpoint**
 
-The checkpoint is [available](https://mycuhk-my.sharepoint.com/:f:/g/personal/1155203591_link_cuhk_edu_hk/EpuCr0azYKxJg7QJ71Mln9UBYDLzoFm6GQWYN9UwCauhYg?e=rwPAhY).
+  The checkpoint is [available](https://mycuhk-my.sharepoint.com/:f:/g/personal/1155203591_link_cuhk_edu_hk/EpuCr0azYKxJg7QJ71Mln9UBYDLzoFm6GQWYN9UwCauhYg?e=rwPAhY).
 
-The LoRA is [available](https://mycuhk-my.sharepoint.com/:f:/g/personal/1155203591_link_cuhk_edu_hk/EiqYrc8lKUhFkpEb-DC8CV8BJPbqkJsyvz66cjXOCnDS1Q?e=hAgbi9).
+  The LoRA is [available](https://mycuhk-my.sharepoint.com/:f:/g/personal/1155203591_link_cuhk_edu_hk/EiqYrc8lKUhFkpEb-DC8CV8BJPbqkJsyvz66cjXOCnDS1Q?e=hAgbi9).
 
-```
-CUDA_VISIBLE_DEVICES=0,1 python3 app_with_T2I_LoRA.py \
---config ./configs/code_release.yaml \
---text_lora_path [text_lora_path] \
---unet_lora_path [unet_lora_path] \
---beta_text [beta_text] \
---beta_vae [beta_vae] \
---beta_unet [beta_unet] \
---text_model_path [text_model_path] \
---unet_model_path [unet_model_path] \
---vae_model_path [vae_model_path]  \
---model_path [model_path] \
---pretrain_model_path [pretrain_model_path] \
---sub_folder [sub_folder]
-```
+  ```python
+  CUDA_VISIBLE_DEVICES=0,1 python3 app_with_T2I_LoRA.py \
+  --config ./configs/code_release.yaml \
+  --unet_lora_path [unet_lora_path] \  #  the LoRA weights for unet
+  --text_lora_path [text_lora_path] \ #  the LoRA weights for text_encoder
+  --vae_lora_path [vae_lora_path] \  #  the LoRA weights for vae
+  --beta_unet [beta_unet] \ # the hyper-parameter $beta$ for unet LoRA weights
+  --beta_text [beta_text] \ # the hyper-parameter $beta$ for text_encoder LoRA weights
+  --beta_vae [beta_vae] \ # the hyper-parameter $beta$ for vae LoRA weights
+  --text_model_path [text_model_path] \ # set the text encoder path, e.g. stable-diffusion-v1-5-inpainting/text_encoder/pytorch_model.bin
+  --unet_model_path [unet_model_path] \ # set the path to SD1.5 unet weights, e.g. stable-diffusion-v1-5-inpainting/unet/diffusion_pytorch_model.bin 
+  --vae_model_path [vae_model_path]  \ # set the vae path, e.g. stable-diffusion-v1-5-inpainting/vae/diffusion_pytorch_model.bin
+  --model_path [model_path] \ # cococo weights
+  --pretrain_model_path [pretrain_model_path] \ # the image inpainting pretrained model path, e.g. ./stable-diffusion-v1-5-inpainting
+  --sub_folder [sub_folder] # the default is unet
+  ```
 
 ### TO DO
 
