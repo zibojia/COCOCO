@@ -179,48 +179,53 @@ Surprisingly, we found that inpainting model is compatiable with T2I model, even
   <img src="https://github.com/zibojia/COCOCO/blob/main/__asset__/task.PNG" alt="COCOCO" style="width: 60%;"/>
 </p>
 
+#### Convert safetensors to Pytorch weights
 
+* **For the model using different key, we use the following script to process opensource T2I model.**
 
-**1. For the model using different key, we use the following script to process opensource T2I model.**
+  For example, the [epiCRealism](https://civitai.com/models/25694?modelVersionId=134065), it is different from the key of the StableDiffusion.
 
-For example, the [epiCRealism](https://civitai.com/models/25694?modelVersionId=134065), it is different from the key of the StableDiffusion.
+  ```
+  model.diffusion_model.input_blocks.1.1.norm.bias
+  model.diffusion_model.input_blocks.1.1.norm.weight
+  model.diffusion_model.input_blocks.1.1.proj_in.bias
+  model.diffusion_model.input_blocks.1.1.proj_in.weight
+  model.diffusion_model.input_blocks.1.1.proj_out.bias
+  model.diffusion_model.input_blocks.1.1.proj_out.weight
+  ```
 
-```
-model.diffusion_model.input_blocks.1.1.norm.bias
-model.diffusion_model.input_blocks.1.1.norm.weight
-model.diffusion_model.input_blocks.1.1.proj_in.bias
-model.diffusion_model.input_blocks.1.1.proj_in.weight
-model.diffusion_model.input_blocks.1.1.proj_out.bias
-model.diffusion_model.input_blocks.1.1.proj_out.weight
-```
+  Therefore, we develope a tool to convert this type model to the delta of weight.
 
-Therefore, we develope a tool to convert this type model to the delta of weight.
+  ```
+  cd task_vector;
+  python3 convert.py \
+    --tensor_path [safetensor_path] \
+    --unet_path [unet_path] \
+    --text_encoder_path [text_encoder_path] \
+    --vae_path [vae_path] \
+    --source_path ./resources \
+    --target_path ./resources \
+    --target_prefix [prefix];
+  ```
 
-```
-cd task_vector;
-python3 convert.py --tensor_path [safetensor_path] --unet_path [unet_path] --text_encoder_path [text_encoder_path] --vae_path [vae_path] --source_path ./resources --target_path ./resources --target_prefix [prefix];
-```
+  * **For the model using same key and trained by LoRA.**
 
-**2. For the model using same key and trained by LoRA.**
+  For example, the [Ghibli](https://civitai.com/models/54233/ghiblibackground) LoRA.
 
-For example, the [Ghibli](https://civitai.com/models/54233/ghiblibackground) LoRA.
+  ```
+  lora_unet_up_blocks_3_resnets_0_conv1.lora_down.weight
+  lora_unet_up_blocks_3_resnets_0_conv1.lora_up.weight
+  ```
 
-```
-lora_unet_up_blocks_3_resnets_0_conv1.lora_down.weight
-lora_unet_up_blocks_3_resnets_0_conv1.lora_up.weight
-lora_unet_up_blocks_3_resnets_0_conv2.lora_down.weight
-lora_unet_up_blocks_3_resnets_0_conv2.lora_up.weight
-```
-
-```
-python3 convert_lora.py \
---tensor_path [tensor_path] \
---unet_path [unet_path] \
---text_encoder_path [text_encoder_path] \
---vae_path [vae_path] \
---regulation_path ./lora.json \
---target_prefix [target_prefix]
-```
+  ```python
+  python3 convert_lora.py \
+    --tensor_path [tensor_path] \
+    --unet_path [unet_path] \
+    --text_encoder_path [text_encoder_path] \
+    --vae_path [vae_path] \
+    --regulation_path ./lora.json \
+    --target_prefix [target_prefix]
+  ```
 
 **3. You can use customized T2I or LoRA to create vision content in the masks.**
 
