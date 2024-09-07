@@ -72,6 +72,7 @@
 - [x] Your gcc version is greater than 9.4.
 - [x] Your diffusers version is 0.11.1.
 
+#### Install the requirements
 *If you update your enviroments successfully, then try to install the dependencies by pip.*
 
 ```
