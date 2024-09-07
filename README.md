@@ -12,7 +12,7 @@
 
 
 <p align="center">
-  <img src="https://github.com/zibojia/COCOCO/blob/main/__asset__/COCOCO.PNG" alt="COCOCO" style="width: 80%;"/>
+  <img src="https://github.com/zibojia/COCOCO/blob/main/__asset__/COCOCO.PNG" alt="COCOCO" style="width: 100%;"/>
 </p>
 
 <table>
