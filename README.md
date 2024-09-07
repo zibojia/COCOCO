@@ -65,9 +65,9 @@
     - [Video-Inpaint-Anything](#5-cococo-inference-with-sam2)
   - [Inference CoCoCo](#3-run-our-validation-script)
   - [Personalized Video Inpainting](#4-personalized-video-inpainting-optional)
-    - [Convert Safetensors to Pytorch weights]()
-    - [Transform Personalized Image Inpainting]()
-    - [Create Personalized Inpainting Visual Content]()
+    - [Convert Safetensors to Pytorch weights](convert-safetensors-to-pytorch-weights)
+    - [Transform Personalized Image Inpainting](take-pytorch-weights-and-add-them-on-cococo-to-create-personalized-video-inpainting)
+    - [Create Personalized Inpainting Visual Content](take-pytorch-weights-and-add-them-on-cococo-to-create-personalized-video-inpainting)
   - [Inference with SAM2 (Video Inpaint Anything)](#5-cococo-inference-with-sam2)
 
 
