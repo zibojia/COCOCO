@@ -106,7 +106,7 @@ python3 valid_code_release.py --config ./configs/code_release.yaml \
 
 ```
 
-### 4. Using our Inpainting model with T2Is to Create Personalized Video Inpainting (Optional)
+### 4. Personalized Video Inpainting (Optional)
 
 *We give a method to allow users to compose their own personlized video inpainting model by using personalized T2Is* **WITHOUT TRAINING**. There are two steps in total:
 
