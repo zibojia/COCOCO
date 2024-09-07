@@ -115,6 +115,11 @@ mkdir [cococo_folder_name]; cd [cococo_folder_name]; wget [cococo_download_link]
 
 **We release the demo code to use the SAM2 to implement Video Inpainting Anything. Try our [Demo](https://github.com/zibojia/COCOCO?tab=readme-ov-file#5-cococo-inference-with-sam2)!**
 
+<p align="center">
+  <img src="https://github.com/zibojia/COCOCO/blob/main/__asset__/DEMO.PNG" alt="DEMO" style="width: 80%;"/>
+</p>
+
+
 ### 3. Run our validation script.
 ```run_code
 
@@ -239,9 +244,6 @@ python3 valid_code_release_with_T2I_LoRA.py \
 
 ### 5. COCOCO INFERENCE with SAM2
 
-<p align="center">
-  <img src="https://github.com/zibojia/COCOCO/blob/main/__asset__/DEMO.PNG" alt="DEMO" style="width: 80%;"/>
-</p>
 
 **Try our demo with original COCOCO**
 ```
